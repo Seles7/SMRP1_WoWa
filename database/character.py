@@ -15,7 +15,7 @@ class Character(Base):
     id_racespec = Column(ForeignKey("RaceSpec.id"), primary_key=True)
     id_guild = Column(ForeignKey("Guild.id"), primary_key=True)
 
-    racespec = relationship("RaceSpec", back_populates="racespec_characters")
+    racespec = relationship("RaceSpec", back_populates="characters")
     guild = relationship("Guild", back_populates="guild_characters")
 
     def __str__(self):
