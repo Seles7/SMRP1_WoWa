@@ -1,5 +1,3 @@
-from datetime import date
-
 from sqlalchemy import Column, Integer, String, ForeignKey, Date
 from sqlalchemy.orm import relationship
 
@@ -12,11 +10,12 @@ class Character(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     nickname = Column(String(100), nullable=False)
     level = Column(Integer, nullable=False)
-    password = Column(String(50), nullable=False)
-    id_racespec = Column(ForeignKey("RaceSpec.id"), primary_key=True)
-    id_guild = Column(ForeignKey("Guild.id"), primary_key=True)
+    id_user = Column(ForeignKey("User.id"), nullable=False)
+    id_racespec = Column(ForeignKey("RaceSpec.id"), nullable=False)
+    id_guild = Column(ForeignKey("Guild.id"), nullable=False)
 
-    racespec = relationship("RaceSpec", back_populates="characters")
+    user = relationship("User", back_populates="user_characters")
+    racespec = relationship("RaceSpec", back_populates="racespec_characters")
     guild = relationship("Guild", back_populates="guild_characters")
 
     def __str__(self):
