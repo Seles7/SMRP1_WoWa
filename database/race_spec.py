@@ -16,7 +16,7 @@ class RaceSpec(Base):
     spec = relationship("Spec", back_populates="spec_races")
 
     def __str__(self):
-        return f"RaceSpec: Race({self.race_id}) Spec({self.spec_id})"
+        return f"RaceSpec:{self.id} Race({self.race_id}) Spec({self.spec_id})"
 
     def __repr__(self):
         return str(self)

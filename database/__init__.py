@@ -4,3 +4,4 @@ from .guild import Guild
 from .race import Race
 from .race_spec import RaceSpec
 from .spec import Spec
+from .user import User
