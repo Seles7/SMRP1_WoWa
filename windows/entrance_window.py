@@ -29,12 +29,6 @@ class EntranceWindow(QMainWindow, Ui_EntranceWindow):
     def create_AuthorizationWidget(self):
         self.create_window = Authorization(self)
         self.create_window.show()
-        self.close()
 
     def exitFromWindow(self):
-        print(self.key)
-        #self.close()
-
-    def af(self):
-        if(self.key == 1):
-            self.close()
+        self.close()

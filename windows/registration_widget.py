@@ -21,14 +21,23 @@ class Registration(QWidget, Ui_RegistrationWidget):
     def createUser(self):
         username_input = self.lineEdit_Name.text()
         password_input = self.lineEdit_Password.text()
+
         new_user = User(username=username_input, password=password_input)
+
+        all_users = self.session.query(User).all()
+
+        for i in range(len(all_users)):
+            user_check: User = self.session.query(User).get(i + 1)
+            name = user_check.username
+            if(new_user.username == name):
+                self.open_userAlreadyRegist()
 
         self.session.add(new_user)
         self.session.commit()
+        self.custom_close()
 
+    def open_userAlreadyRegist(self):
         self.custom_close()
 
     def custom_close(self):
-        #for callback in self.callbacks:
-        #    callback()
         self.close()
