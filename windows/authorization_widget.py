@@ -20,7 +20,6 @@ class Authorization(QWidget, Ui_AuthorizationWidget):
         self.push_AceptAuthoriz.clicked.connect(self.enterUser)
         self.push_GoBack.clicked.connect(self.custom_close)
 
-
         self.passTo_mainWindow = MainMenu()
 
     def enterUser(self):
@@ -28,10 +27,14 @@ class Authorization(QWidget, Ui_AuthorizationWidget):
         password_input = self.lineEdit_Password.text()
 
         new_user = User(username=username_input, password=password_input)
-
+        a: User = self.session.query(User).get(1)
+        print(a.username, a.password)
+        print(1)
         for user in self.session:
+            print(222)
             if str(new_user.username) == str(user.username) \
                     and str(new_user.password) == str(user.password):
+                print(33333)
                 self.passTo_mainWindow.item.setText(new_user.username)
                 self.passTo_mainWindow.showWindow()
                 self.custom_close()

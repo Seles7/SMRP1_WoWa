@@ -11,7 +11,7 @@ class RaceSpec(Base):
     race_id = Column(ForeignKey("Race.id"), nullable=False)
     spec_id = Column(ForeignKey("Spec.id"), nullable=False)
 
-    race_spec_characters = relationship("Character", back_populates="race_spec")
+    racespec_characters = relationship("Character", back_populates="racespec")
     race = relationship("Race", back_populates="race_specs")
     spec = relationship("Spec", back_populates="spec_races")
 
