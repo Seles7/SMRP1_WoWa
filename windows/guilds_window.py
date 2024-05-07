@@ -15,6 +15,17 @@ class Guilds(QMainWindow, Ui_GuildsWindow):
         self.setupUi(self)
         self.session = get_session()
         self.item = QListWidgetItem()
+        self.update_table()
+
+    def update_table(self):
+        guilds = self.session.query(Guild).order_by(Guild.id).all()
+        self.tableWidget_Guilds.setRowCount(0)
+        for guild in guilds:
+            row_position = self.tableWidget_Guilds.rowCount()
+            self.tableWidget_Guilds.insertRow(row_position)
+            self.tableWidget_Guilds.setItem(row_position, 0, QTableWidgetItem(str(user.id)))
+            self.tableWidget_Guilds.setItem(row_position, 1, QTableWidgetItem(user.username))
+
 
     def showWindow(self):
         self.show()
