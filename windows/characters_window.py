@@ -16,5 +16,4 @@ class Characters(QMainWindow, Ui_CharactersWindow):
         self.item = QListWidgetItem()
 
     def showWindow(self):
-        print(self.item.setText())
         self.show()
