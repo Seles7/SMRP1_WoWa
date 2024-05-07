@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="pins1">
+    <file>pergament2.png</file>
+    <file>pergament4.jpg</file>
+    <file>guilds.jpg</file>
+    <file>heroes.jpg</file>
+    <file>zastavochka.png</file>
+    <file>tavern.jpg</file>
+    <file>VOROTA1.jpg</file>
+    <file>zastavochka1.png</file>
+  </qresource>
+</RCC>
