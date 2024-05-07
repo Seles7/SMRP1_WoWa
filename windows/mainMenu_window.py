@@ -22,6 +22,7 @@ class MainMenu(QMainWindow, Ui_MainMenuWindow):
         self.push_players.clicked.connect(self.openPlayers)
         self.push_Guilds.clicked.connect(self.openGuilds)
         self.push_RacesSpecs.clicked.connect(self.openRacesSpecs)
+        self.push_ExitFromAccount.clicked.connect(self.exitFromAccount)
 
         self.passTo_charactersWindow = Characters()
         self.passTo_usersWindow = Users()
@@ -44,5 +45,11 @@ class MainMenu(QMainWindow, Ui_MainMenuWindow):
         self.passTo_rasesSpecsWindow.item.setText(self.item.text())
         self.passTo_rasesSpecsWindow.showWindow()
 
+    def exitFromAccount(self):
+        self.custom_close()
+
     def showWindow(self):
         self.show()
+
+    def custom_close(self):
+        self.close()
