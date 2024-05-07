@@ -23,8 +23,9 @@ class Guilds(QMainWindow, Ui_GuildsWindow):
         for guild in guilds:
             row_position = self.tableWidget_Guilds.rowCount()
             self.tableWidget_Guilds.insertRow(row_position)
-            self.tableWidget_Guilds.setItem(row_position, 0, QTableWidgetItem(str(user.id)))
-            self.tableWidget_Guilds.setItem(row_position, 1, QTableWidgetItem(user.username))
+            self.tableWidget_Guilds.setItem(row_position, 0, QTableWidgetItem(str(guild.id)))
+            self.tableWidget_Guilds.setItem(row_position, 1, QTableWidgetItem(guild.nickname))
+            self.tableWidget_Guilds.setItem(row_position, 2, QTableWidgetItem())#число участников
 
 
     def showWindow(self):
