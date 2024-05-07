@@ -29,17 +29,13 @@ class Authorization(QWidget, Ui_AuthorizationWidget):
 
         new_user = User(username=username_input, password=password_input)
 
-        all_users = self.session.query(User).all()
-
-        for i in range(len(all_users)):
-            user_check: User = self.session.query(User).get(i + 1)
-            if str(new_user.username) == str(user_check.username) \
-                    and str(new_user.password) == str(user_check.password):
+        for user in self.session:
+            if str(new_user.username) == str(user.username) \
+                    and str(new_user.password) == str(user.password):
                 self.passTo_mainWindow.item.setText(new_user.username)
                 self.passTo_mainWindow.showWindow()
                 self.custom_close()
         self.open_userAlreadyRegist()
-
 
     def open_userAlreadyRegist(self):
         self.custom_close()
