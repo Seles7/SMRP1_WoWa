@@ -17,7 +17,7 @@ sys.excepthook = exception_hook
 app = QApplication(sys.argv)
 
 
-entrance = entrance_window.EntranceWindow()
+entrance = entrance_window.Entrance()
 entrance.show()
 
 

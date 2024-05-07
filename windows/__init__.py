@@ -1,1 +1,1 @@
-from .entrance_window import EntranceWindow
+from .entrance_window import Entrance

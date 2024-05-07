@@ -9,7 +9,7 @@ from .authorization_widget import Authorization
 from database import get_session
 
 
-class EntranceWindow(QMainWindow, Ui_EntranceWindow):
+class Entrance(QMainWindow, Ui_EntranceWindow):
     def __init__(self):
         super().__init__()
         self.create_window = None
@@ -18,9 +18,6 @@ class EntranceWindow(QMainWindow, Ui_EntranceWindow):
         self.SignUp.clicked.connect(self.create_RegistrationWidget)
         self.LogIn.clicked.connect(self.create_AuthorizationWidget)
         self.Exit.clicked.connect(self.exitFromWindow)
-        self.key = list()
-        self.key.append(0)
-
 
     def create_RegistrationWidget(self):
         self.create_window = Registration(self)

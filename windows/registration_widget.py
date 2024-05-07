@@ -28,15 +28,14 @@ class Registration(QWidget, Ui_RegistrationWidget):
 
         for i in range(len(all_users)):
             user_check: User = self.session.query(User).get(i + 1)
-            name = user_check.username
-            if(new_user.username == name):
+            if str(new_user.username) == str(user_check.username):
                 self.open_userAlreadyRegist()
 
         self.session.add(new_user)
         self.session.commit()
         self.custom_close()
 
-    def open_userAlreadyRegist(self):
+    def open_userAlreadyRegist(self, ):
         self.custom_close()
 
     def custom_close(self):
