@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>GuildsWindow</class>
- <widget class="QMainWindow" name="GuildsWindow">
+ <class>UsersWindow</class>
+ <widget class="QMainWindow" name="UsersWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -23,36 +23,13 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Гильдии</string>
+   <string>Игроки</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="push_createGuild">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>440</y>
-      <width>191</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Monotype Corsiva</family>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));
-color: rgb(255, 253, 189)</string>
-    </property>
-    <property name="text">
-     <string>Создать гильдию</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="Title">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>260</x>
       <y>10</y>
       <width>161</width>
       <height>41</height>
@@ -68,7 +45,7 @@ color: rgb(255, 253, 189)</string>
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Гильдии</string>
+     <string>Игроки</string>
     </property>
    </widget>
    <widget class="QPushButton" name="push_goBack">
@@ -94,7 +71,7 @@ color: rgb(255, 253, 189)</string>
      <string>Назад</string>
     </property>
    </widget>
-   <widget class="QTableWidget" name="tableWidget_Guilds">
+   <widget class="QTableWidget" name="tableWidget_Users">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -119,12 +96,7 @@ color: rgb(255, 253, 189)</string>
     </column>
     <column>
      <property name="text">
-      <string>Название</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Число участников</string>
+      <string>Никнейм</string>
      </property>
     </column>
    </widget>
@@ -156,16 +128,16 @@ color: rgb(255, 253, 189)</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../../images/resource1.qrc">:/pins1/guilds.jpg</pixmap>
+     <pixmap resource="../../images/resource1.qrc">:/pins1/tavern.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="img_underGuilds">
+   <widget class="QLabel" name="img_underUsers">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>230</x>
       <y>10</y>
       <width>201</width>
       <height>41</height>
@@ -181,12 +153,35 @@ color: rgb(255, 253, 189)</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="push_BAN">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>440</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monotype Corsiva</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));
+color: rgb(255, 253, 189)</string>
+    </property>
+    <property name="text">
+     <string>Забанить</string>
+    </property>
+   </widget>
    <zorder>img_background</zorder>
-   <zorder>img_underGuilds</zorder>
-   <zorder>push_createGuild</zorder>
+   <zorder>img_underUsers</zorder>
    <zorder>Title</zorder>
    <zorder>push_goBack</zorder>
-   <zorder>tableWidget_Guilds</zorder>
+   <zorder>tableWidget_Users</zorder>
+   <zorder>push_BAN</zorder>
   </widget>
  </widget>
  <resources>
