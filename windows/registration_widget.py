@@ -35,7 +35,7 @@ class Registration(QWidget, Ui_RegistrationWidget):
         self.session.commit()
         self.custom_close()
 
-    def open_userAlreadyRegist(self, ):
+    def open_userAlreadyRegist(self):
         self.custom_close()
 
     def custom_close(self):

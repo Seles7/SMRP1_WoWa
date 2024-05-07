@@ -4,7 +4,9 @@ from PyQt5.QtWidgets import QMainWindow, QListWidgetItem
 from ui import Ui_MainMenuWindow
 
 from .characters_window import Characters
-from .
+from .users_window import Users
+from .guilds_window import Guilds
+from .racesSpecs_window import RacesSpecs
 
 from database import get_session
 
@@ -21,8 +23,14 @@ class MainMenu(QMainWindow, Ui_MainMenuWindow):
         self.push_Guilds.clicked.connect(self.openGuilds)
         self.push_RacesSpecs.clicked.connect(self.openRacesSpecs)
 
+        self.passTo_charactersWindow = Characters()
+        self.passTo_usersWindow = Users()
+        self.passTo_guildsWindow = Guilds()
+        self.passTo_rasesSpecsWindow = RacesSpecs()
+
     def openHeroes(self):
-        pass
+        self.passTo_charactersWindow.item.setText(self.item.text)
+        self.passTo_charactersWindow.showWindow()
 
     def openPlayers(self):
         pass
@@ -34,4 +42,9 @@ class MainMenu(QMainWindow, Ui_MainMenuWindow):
         pass
 
     def showWindow(self):
+        print()
+        print()
+        print(str(self.item.text()))
+        print()
+        print()
         self.show()

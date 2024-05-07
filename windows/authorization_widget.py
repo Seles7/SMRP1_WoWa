@@ -37,6 +37,8 @@ class Authorization(QWidget, Ui_AuthorizationWidget):
                     and str(new_user.password) == str(user_check.password):
                 self.passTo_mainWindow.item.setText(new_user.username)
                 self.passTo_mainWindow.showWindow()
+                print(1111111)
+                print(self.passTo_mainWindow.item.text())
                 self.custom_close()
         self.open_userAlreadyRegist()
 
