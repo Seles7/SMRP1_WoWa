@@ -15,7 +15,7 @@ class Users(QMainWindow, Ui_UsersWindow):
         self.setupUi(self)
         self.session = get_session()
         self.item = QListWidgetItem()
-        self.push_goBack.clicked.connect(self.goBack())
+        self.push_goBack.clicked.connect(self.goBack)
         self.update_table()
 
     def update_table(self):

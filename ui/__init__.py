@@ -7,9 +7,6 @@ from .ui_Users import Ui_UsersWindow
 
 from .ui_Registration import Ui_RegistrationWidget
 from .ui_Authorization import Ui_AuthorizationWidget
-from .ui_RaceMake import Ui_RaceWidget
-from .ui_ClassMake import Ui_ClassMake
-from .ui_Sovmestimosti import Ui_SovmestimostiWidget
 
 from .ui_CreateCharacter import Ui_CreateCharacterWidget
 from .ui_CreateGuild import Ui_CreateGuildWidget

@@ -12,6 +12,7 @@ from database import get_session, User
 class Authorization(QWidget, Ui_AuthorizationWidget):
 
     def __init__(self, callbacks: Iterable[Callable]):
+        print(111111111)
         super().__init__()
         self.create_window = None
         self.callbacks = callbacks
@@ -19,7 +20,6 @@ class Authorization(QWidget, Ui_AuthorizationWidget):
         self.session = get_session()
         self.push_AceptAuthoriz.clicked.connect(self.enterUser)
         self.push_GoBack.clicked.connect(self.custom_close)
-
         self.passTo_mainWindow = MainMenu()
 
     def enterUser(self):

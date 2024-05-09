@@ -14,6 +14,7 @@ class Characters(QMainWindow, Ui_CharactersWindow):
         self.setupUi(self)
         self.session = get_session()
         self.item = QListWidgetItem()
+
         self.update_table()
 
     def update_table(self):
