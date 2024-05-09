@@ -99,7 +99,6 @@ class Ui_ClassMake(object):
         self.push_GoBack.setText(_translate("ClassMake", "Я передумал..."))
         self.label_Name.setText(_translate("ClassMake", "Название"))
         self.label_Authorization.setText(_translate("ClassMake", "Создание класса"))
-import resource1_rc
 import test_rc
 
 

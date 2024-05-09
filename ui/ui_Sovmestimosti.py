@@ -124,7 +124,7 @@ class Ui_SovmestimostiWidget(object):
         self.label_Password.setText(_translate("SovmestimostiWidget", "Класс"))
         self.label_Authorization.setText(_translate("SovmestimostiWidget", "Совместимость"))
         self.label.setText(_translate("SovmestimostiWidget", "<html><head/><body><p align=\"center\"><span style=\" font-size:8pt;\">Писать Расы и Классы идентично табличным!</span></p></body></html>"))
-import resource1_rc
+
 import test_rc
 
 

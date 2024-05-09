@@ -17,7 +17,7 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
         self.item = QListWidgetItem()
         self.update_table()
 
-        self.passTo_charactersWindow = Characters()
+        self.passTo_racemake = RaceWidget()
         self.passTo_usersWindow = Users()
         self.passTo_guildsWindow = Guilds()
         self.passTo_rasesSpecsWindow = RacesSpecs()
@@ -32,16 +32,6 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
             self.tableWidget_Races.setItem(row_position, 0, QTableWidgetItem(str(race.id)))
             self.tableWidget_Races.setItem(row_position, 1, QTableWidgetItem(race.nickname))
 
-    def update_table(self):
-        specs = self.session.query(Spec).order_by(Spec.id).all()
-        self.tableWidget_Specs.setRowCount(0)
-        for spec in specs:
-            row_position = self.tableWidget_Specs.rowCount()
-            self.tableWidget_Specs.insertRow(row_position)
-            self.tableWidget_Specs.setItem(row_position, 0, QTableWidgetItem(str(spec.id)))
-            self.tableWidget_Specs.setItem(row_position, 1, QTableWidgetItem(spec.nickname))
-
-
     def showWindow(self):
         self.show()
 
@@ -49,8 +39,8 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
         self.close()
 
     def openRaceMake(self):
-        self.passTo_RaceMakeWindow.item.setText(self.item.text())
-        self.passTo_RaceMakeWindow.showWindow()
+        self.passTo_RaceWidget.item.setText(self.item.text())
+        self.passTo_RaceWidget.showWindow()
 
     def openClassMake(self):
         self.passTo_ClassMakeWindow.item.setText(self.item.text())
