@@ -12,7 +12,6 @@ from database import get_session, User
 class Authorization(QWidget, Ui_AuthorizationWidget):
 
     def __init__(self, callbacks: Iterable[Callable]):
-        print(111111111)
         super().__init__()
         self.create_window = None
         self.callbacks = callbacks
@@ -28,7 +27,7 @@ class Authorization(QWidget, Ui_AuthorizationWidget):
 
         new_user = User(username=username_input, password=password_input)
 
-        users: User = self.session.query(User)
+        users = self.session.query(User)
 
         for user in users:
             if str(new_user.username) == str(user.username) \

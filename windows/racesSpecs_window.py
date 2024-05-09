@@ -27,13 +27,13 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
         self.update_table()
 
     def update_table(self):
-        races: Race = self.session.query(Race)
-        specs: Spec = self.session.query(Spec)
-        racesSpecs: RaceSpec = self.session.query(RaceSpec)
+        races = self.session.query(Race).order_by(Race.id).all()
+        specs = self.session.query(Spec).order_by(Spec.id).all()
+        racesSpecs = self.session.query(RaceSpec).order_by(RaceSpec.id).all()
 
         self.tableWidget_Races.setRowCount(0)
         for race in races:
-            row_position = self.tableWidget_RacesSpecs.rowCount()
+            row_position = self.tableWidget_Races.rowCount()
             self.tableWidget_Races.insertRow(row_position)
             self.tableWidget_Races.setItem(row_position, 0, QTableWidgetItem(str(race.id)))
             self.tableWidget_Races.setItem(row_position, 1, QTableWidgetItem(str(race.title)))
@@ -48,10 +48,10 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
         self.tableWidget_RacesSpecs.setRowCount(0)
         for raceSpec in racesSpecs:
             for race in races:
-                if(raceSpec.race_id == race.id):
+                if raceSpec.race_id == race.id:
                     race_inRacesSpecs = race.title
             for spec in specs:
-                if (raceSpec.spec_id == spec.id):
+                if raceSpec.spec_id == spec.id:
                     spec_inRacesSpecs = spec.title
 
             row_position = self.tableWidget_RacesSpecs.rowCount()

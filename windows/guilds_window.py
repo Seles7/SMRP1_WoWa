@@ -16,15 +16,35 @@ class Guilds(QMainWindow, Ui_GuildsWindow):
         self.setupUi(self)
         self.session = get_session()
         self.item = QListWidgetItem()
-        self.push_createGuild.clicked.connect(self.open_createGuildWindow)
+        #self.push_createGuild.clicked.connect(self.open_createGuildWindow)
+        self.push_goBack.clicked.connect(self.goBack)
 
         self.passTo_createGuildWindow = CreateGuild()
 
-        #self.update_table()
+        self.update_table()
+
+    def update_table(self):
+        guilds = self.session.query(Guild).order_by(Guild.id).all()
+        characters = self.session.query(Character).order_by(Character.id).all()
+
+        self.tableWidget_Guilds.setRowCount(0)
+        for guild in guilds:
+            count = 0
+            for character in characters:
+                if character.id_guild == guild.id:
+                    count += 1
+            row_position = self.tableWidget_Guilds.rowCount()
+            self.tableWidget_Guilds.insertRow(row_position)
+            self.tableWidget_Guilds.setItem(row_position, 0, QTableWidgetItem(str(guild.id)))
+            self.tableWidget_Guilds.setItem(row_position, 1, QTableWidgetItem(str(guild.title)))
+            self.tableWidget_Guilds.setItem(row_position, 2, QTableWidgetItem(count))
 
     def open_createGuildWindow(self):
         self.passTo_createGuildWindow.item.setText(self.item.text())
         self.passTo_createGuildWindow.showWindow()
+
+    def goBack(self):
+        self.close()
 
     def showWindow(self):
         self.show()

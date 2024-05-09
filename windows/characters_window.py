@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QWidget, QMainWindow, QTableWidgetItem, QListWidgetI
 
 from ui import Ui_CharactersWindow
 
-from database import get_session, Character
+from database import get_session, Character, Race, Spec, RaceSpec, Guild, User
 
 class Characters(QMainWindow, Ui_CharactersWindow):
     def __init__(self):
@@ -15,23 +15,46 @@ class Characters(QMainWindow, Ui_CharactersWindow):
         self.session = get_session()
         self.item = QListWidgetItem()
 
+        self.push_goBackP.clicked.connect(self.goBack)
+
         self.update_table()
 
     def update_table(self):
         characters = self.session.query(Character).order_by(Character.id).all()
+        users = self.session.query(User).order_by(User.id).all()
+        guilds = self.session.query(Guild).order_by(Guild.id).all()
+        races = self.session.query(Race).order_by(Race.id).all()
+        specs = self.session.query(Spec).order_by(Spec.id).all()
+        racesSpecs = self.session.query(RaceSpec).order_by(RaceSpec.id).all()
+
         self.table_Characters.setRowCount(0)
         for character in characters:
-             row_position = self.table_Characters.rowCount()
-             self.table_Characters.insertRow(row_position)
-             self.table_Characters.setItem(row_position, 0, QTableWidgetItem(str(character.id)))
-             self.table_Characters.setItem(row_position, 1, QTableWidgetItem(character.nickname))
-             self.table_Characters.setItem(row_position, 2, QTableWidgetItem())  # race
-             self.table_Characters.setItem(row_position, 3, QTableWidgetItem())  # spec
-             self.table_Characters.setItem(row_position, 4, QTableWidgetItem(character.level))
-             self.table_Characters.setItem(row_position, 5, QTableWidgetItem(character.id_guild))
-             self.table_Characters.setItem(row_position, 6, QTableWidgetItem(character.id_user))
+            for raceSpec in racesSpecs:
+                if raceSpec.id == character.id_racespec:
+                    for race in races:
+                        if race.id == raceSpec.race_id:
+                            race_ofChar = race.title
+                    for spec in specs:
+                        if spec.id == raceSpec.spec_id:
+                            spec_ofChar = spec.title
+            for guild in guilds:
+                if guild.id == character.id_guild:
+                    guild_ofChar = guild.title
+            for user in users:
+                if user.id == character.id_user:
+                    user_ofChar = user.username
 
-    def exitFromWindow(self):
+            row_position = self.table_Characters.rowCount()
+            self.table_Characters.insertRow(row_position)
+            self.table_Characters.setItem(row_position, 0, QTableWidgetItem(str(character.id)))
+            self.table_Characters.setItem(row_position, 1, QTableWidgetItem(character.nickname))
+            self.table_Characters.setItem(row_position, 2, QTableWidgetItem(str(race_ofChar)))
+            self.table_Characters.setItem(row_position, 3, QTableWidgetItem(spec_ofChar))
+            self.table_Characters.setItem(row_position, 4, QTableWidgetItem(str(character.level)))
+            self.table_Characters.setItem(row_position, 5, QTableWidgetItem(guild_ofChar))
+            self.table_Characters.setItem(row_position, 6, QTableWidgetItem(user_ofChar))
+
+    def goBack(self):
         self.close()
 
     def showWindow(self):
