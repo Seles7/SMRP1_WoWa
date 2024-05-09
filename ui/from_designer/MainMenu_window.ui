@@ -61,7 +61,7 @@ color: rgb(255, 253, 189)</string>
     <property name="font">
      <font>
       <family>Monotype Corsiva</family>
-      <pointsize>14</pointsize>
+      <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -84,7 +84,7 @@ color: rgb(255, 253, 189)</string>
     <property name="font">
      <font>
       <family>Monotype Corsiva</family>
-      <pointsize>14</pointsize>
+      <pointsize>18</pointsize>
      </font>
     </property>
     <property name="autoFillBackground">
@@ -142,7 +142,7 @@ color: rgb(255, 253, 189)
     <property name="font">
      <font>
       <family>Monotype Corsiva</family>
-      <pointsize>14</pointsize>
+      <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -199,7 +199,7 @@ color: rgb(255, 253, 189)</string>
     <property name="font">
      <font>
       <family>Monotype Corsiva</family>
-      <pointsize>14</pointsize>
+      <pointsize>18</pointsize>
      </font>
     </property>
     <property name="autoFillBackground">

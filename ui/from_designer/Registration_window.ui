@@ -53,7 +53,7 @@
      <x>50</x>
      <y>90</y>
      <width>291</width>
-     <height>77</height>
+     <height>78</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -62,7 +62,7 @@
       <property name="font">
        <font>
         <family>Monotype Corsiva</family>
-        <pointsize>14</pointsize>
+        <pointsize>18</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -79,7 +79,7 @@ color: rgb(255, 253, 189)</string>
       <property name="font">
        <font>
         <family>Monotype Corsiva</family>
-        <pointsize>14</pointsize>
+        <pointsize>18</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -96,7 +96,7 @@ color: rgb(255, 253, 189)
      <widget class="QLineEdit" name="lineEdit_Name">
       <property name="font">
        <font>
-        <pointsize>14</pointsize>
+        <pointsize>18</pointsize>
        </font>
       </property>
      </widget>
@@ -105,7 +105,7 @@ color: rgb(255, 253, 189)
      <widget class="QLineEdit" name="lineEdit_Password">
       <property name="font">
        <font>
-        <pointsize>14</pointsize>
+        <pointsize>18</pointsize>
        </font>
       </property>
      </widget>
@@ -132,7 +132,7 @@ color: rgb(255, 253, 189)
 color: rgb(255, 253, 189)</string>
    </property>
    <property name="text">
-    <string>Погодь...</string>
+    <string>Отмена</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_Registration">
@@ -179,7 +179,7 @@ color: rgb(255, 253, 189)</string>
 color: rgb(255, 253, 189)</string>
    </property>
    <property name="text">
-    <string>Создать аккаунт!</string>
+    <string>Зарегестрироваться</string>
    </property>
   </widget>
   <widget class="QLabel" name="img_underRegist">

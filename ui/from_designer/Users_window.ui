@@ -176,7 +176,7 @@ color: rgb(255, 253, 189)</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../../images/resource1.qrc">:/pins1/tavern.jpg</pixmap>
+     <pixmap resource="../../images/resource1.qrc">:/pins1/tavern2.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>

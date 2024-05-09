@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>RaceWidget</class>
- <widget class="QWidget" name="RaceWidget">
+ <class>CreateRaceWidget</class>
+ <widget class="QWidget" name="CreateRaceWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -25,7 +25,7 @@
   <property name="windowTitle">
    <string>Создание расы</string>
   </property>
-  <widget class="QPushButton" name="push_AceptAuthoriz">
+  <widget class="QPushButton" name="push_AceptCreate">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -45,7 +45,7 @@
 color: rgb(255, 253, 189)</string>
    </property>
    <property name="text">
-    <string>Создать уродца!</string>
+    <string>Создать</string>
    </property>
   </widget>
   <widget class="QPushButton" name="push_GoBack">
@@ -60,7 +60,7 @@ color: rgb(255, 253, 189)</string>
    <property name="font">
     <font>
      <family>Monotype Corsiva</family>
-     <pointsize>16</pointsize>
+     <pointsize>18</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -68,13 +68,13 @@ color: rgb(255, 253, 189)</string>
 color: rgb(255, 253, 189)</string>
    </property>
    <property name="text">
-    <string>Я передумал...</string>
+    <string>Отмена</string>
    </property>
   </widget>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>60</x>
+     <x>50</x>
      <y>100</y>
      <width>291</width>
      <height>41</height>
@@ -86,7 +86,7 @@ color: rgb(255, 253, 189)</string>
       <property name="font">
        <font>
         <family>Monotype Corsiva</family>
-        <pointsize>14</pointsize>
+        <pointsize>18</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -102,14 +102,14 @@ color: rgb(255, 253, 189)</string>
      <widget class="QLineEdit" name="lineEdit_Name">
       <property name="font">
        <font>
-        <pointsize>14</pointsize>
+        <pointsize>18</pointsize>
        </font>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="label_Authorization">
+  <widget class="QLabel" name="label_Race">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -133,12 +133,12 @@ color: rgb(255, 253, 189)</string>
     <string>Создание расы</string>
    </property>
   </widget>
-  <widget class="QLabel" name="img_underAuthoriz">
+  <widget class="QLabel" name="img_underRace">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>80</x>
      <y>10</y>
-     <width>301</width>
+     <width>241</width>
      <height>41</height>
     </rect>
    </property>
@@ -149,7 +149,7 @@ color: rgb(255, 253, 189)</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../test.qrc">:/newPrefix/Downloads/kisspng-paper-scroll-parchment-clip-art-landscape-apge-with-pen-5b0bcdc6e5bf67.4688394015275002309411.png</pixmap>
+    <pixmap resource="../../images/resource1.qrc">:/pins1/pergament2.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -183,22 +183,21 @@ color: rgb(255, 253, 189)</string>
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../../test.qrc">:/newPrefix/Desktop/Прочее/Lab.png</pixmap>
+    <pixmap resource="../../images/resource1.qrc">:/pins1/heroes.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
    </property>
   </widget>
   <zorder>img_background</zorder>
-  <zorder>img_underAuthoriz</zorder>
-  <zorder>push_AceptAuthoriz</zorder>
+  <zorder>img_underRace</zorder>
+  <zorder>push_AceptCreate</zorder>
   <zorder>push_GoBack</zorder>
   <zorder>formLayoutWidget</zorder>
-  <zorder>label_Authorization</zorder>
+  <zorder>label_Race</zorder>
  </widget>
  <resources>
-  <include location="../../../../../images/resource1.qrc"/>
-  <include location="../../test.qrc"/>
+  <include location="../../images/resource1.qrc"/>
  </resources>
  <connections/>
 </ui>

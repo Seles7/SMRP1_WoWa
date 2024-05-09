@@ -32,7 +32,7 @@ class Ui_MainMenuWindow(object):
         self.push_Guilds.setGeometry(QtCore.QRect(70, 360, 151, 31))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
-        font.setPointSize(14)
+        font.setPointSize(18)
         self.push_Guilds.setFont(font)
         self.push_Guilds.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"
 "color: rgb(255, 253, 189)")
@@ -41,7 +41,7 @@ class Ui_MainMenuWindow(object):
         self.push_Characters.setGeometry(QtCore.QRect(70, 280, 151, 31))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
-        font.setPointSize(14)
+        font.setPointSize(18)
         self.push_Characters.setFont(font)
         self.push_Characters.setAutoFillBackground(False)
         self.push_Characters.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"
@@ -63,7 +63,7 @@ class Ui_MainMenuWindow(object):
         self.push_RacesSpecs.setGeometry(QtCore.QRect(70, 400, 151, 31))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
-        font.setPointSize(14)
+        font.setPointSize(18)
         self.push_RacesSpecs.setFont(font)
         self.push_RacesSpecs.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"
 "color: rgb(255, 253, 189)")
@@ -81,7 +81,7 @@ class Ui_MainMenuWindow(object):
         self.push_players.setGeometry(QtCore.QRect(70, 320, 151, 31))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
-        font.setPointSize(14)
+        font.setPointSize(18)
         self.push_players.setFont(font)
         self.push_players.setAutoFillBackground(False)
         self.push_players.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"

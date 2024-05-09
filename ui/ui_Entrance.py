@@ -23,7 +23,7 @@ class Ui_EntranceWindow(object):
         self.LogIn.setGeometry(QtCore.QRect(230, 180, 231, 61))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
-        font.setPointSize(24)
+        font.setPointSize(22)
         self.LogIn.setFont(font)
         self.LogIn.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"
 "color: rgb(255, 253, 189)")
@@ -32,7 +32,7 @@ class Ui_EntranceWindow(object):
         self.Exit.setGeometry(QtCore.QRect(230, 360, 231, 61))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
-        font.setPointSize(19)
+        font.setPointSize(22)
         self.Exit.setFont(font)
         self.Exit.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"
 "color: rgb(255, 253, 189)")
@@ -41,7 +41,7 @@ class Ui_EntranceWindow(object):
         self.SignUp.setGeometry(QtCore.QRect(230, 270, 231, 61))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
-        font.setPointSize(24)
+        font.setPointSize(22)
         self.SignUp.setFont(font)
         self.SignUp.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"
 "color: rgb(255, 253, 189)")
@@ -66,7 +66,7 @@ class Ui_EntranceWindow(object):
         _translate = QtCore.QCoreApplication.translate
         EntranceWindow.setWindowTitle(_translate("EntranceWindow", "Вход"))
         self.LogIn.setText(_translate("EntranceWindow", "Войти"))
-        self.Exit.setText(_translate("EntranceWindow", "Выйти из приложения"))
+        self.Exit.setText(_translate("EntranceWindow", "Выйти"))
         self.SignUp.setText(_translate("EntranceWindow", "Регистрация"))
 import images.resource1_rc
 

@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="pins1">
+    <file>tavern2.jpg</file>
     <file>pergament2.png</file>
     <file>pergament4.jpg</file>
     <file>guilds.jpg</file>

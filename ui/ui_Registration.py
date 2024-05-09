@@ -25,7 +25,7 @@ class Ui_RegistrationWidget(object):
         self.img_background.setScaledContents(True)
         self.img_background.setObjectName("img_background")
         self.formLayoutWidget = QtWidgets.QWidget(RegistrationWidget)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(50, 90, 291, 77))
+        self.formLayoutWidget.setGeometry(QtCore.QRect(50, 90, 291, 78))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
         self.formLayout.setContentsMargins(0, 0, 0, 0)
@@ -33,7 +33,7 @@ class Ui_RegistrationWidget(object):
         self.label_Name = QtWidgets.QLabel(self.formLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
-        font.setPointSize(14)
+        font.setPointSize(18)
         self.label_Name.setFont(font)
         self.label_Name.setStyleSheet("background-color: rgb(61, 61, 61);\n"
 "color: rgb(255, 253, 189)")
@@ -42,7 +42,7 @@ class Ui_RegistrationWidget(object):
         self.label_Password = QtWidgets.QLabel(self.formLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
-        font.setPointSize(14)
+        font.setPointSize(18)
         self.label_Password.setFont(font)
         self.label_Password.setStyleSheet("background-color: rgb(61, 61, 61);\n"
 "color: rgb(255, 253, 189)\n"
@@ -51,13 +51,13 @@ class Ui_RegistrationWidget(object):
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_Password)
         self.lineEdit_Name = QtWidgets.QLineEdit(self.formLayoutWidget)
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(18)
         self.lineEdit_Name.setFont(font)
         self.lineEdit_Name.setObjectName("lineEdit_Name")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_Name)
         self.lineEdit_Password = QtWidgets.QLineEdit(self.formLayoutWidget)
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(18)
         self.lineEdit_Password.setFont(font)
         self.lineEdit_Password.setObjectName("lineEdit_Password")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_Password)
@@ -113,9 +113,9 @@ class Ui_RegistrationWidget(object):
         RegistrationWidget.setWindowTitle(_translate("RegistrationWidget", "Регистрация"))
         self.label_Name.setText(_translate("RegistrationWidget", "Логин  "))
         self.label_Password.setText(_translate("RegistrationWidget", "Пароль"))
-        self.push_GoBack.setText(_translate("RegistrationWidget", "Погодь..."))
+        self.push_GoBack.setText(_translate("RegistrationWidget", "Отмена"))
         self.label_Registration.setText(_translate("RegistrationWidget", "Регистрация"))
-        self.push_AceptRegist.setText(_translate("RegistrationWidget", "Создать аккаунт!"))
+        self.push_AceptRegist.setText(_translate("RegistrationWidget", "Зарегестрироваться"))
 import images.resource1_rc
 
 

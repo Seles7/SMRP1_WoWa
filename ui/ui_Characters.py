@@ -87,7 +87,7 @@ class Ui_CharactersWindow(object):
         self.label.setGeometry(QtCore.QRect(-40, 0, 800, 500))
         self.label.setStyleSheet("")
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(":/pins1/tavern.jpg"))
+        self.label.setPixmap(QtGui.QPixmap(":/pins1/tavern2.jpg"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
