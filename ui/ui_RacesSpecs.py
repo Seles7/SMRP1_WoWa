@@ -72,7 +72,7 @@ class Ui_RacesSpecsWindow(object):
 "color: rgb(255, 253, 189)")
         self.push_addRace.setObjectName("push_addRace")
         self.label_Specs = QtWidgets.QLabel(self.centralwidget)
-        self.label_Specs.setGeometry(QtCore.QRect(270, 80, 61, 31))
+        self.label_Specs.setGeometry(QtCore.QRect(270, 80, 71, 31))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
         font.setPointSize(18)
