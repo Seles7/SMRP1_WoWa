@@ -37,7 +37,7 @@
    <property name="font">
     <font>
      <family>Monotype Corsiva</family>
-     <pointsize>16</pointsize>
+     <pointsize>18</pointsize>
     </font>
    </property>
    <property name="styleSheet">
@@ -45,7 +45,7 @@
 color: rgb(255, 253, 189)</string>
    </property>
    <property name="text">
-    <string>Основать Гильдию!</string>
+    <string>Основать Гильдию</string>
    </property>
   </widget>
   <widget class="QPushButton" name="push_GoBack">
@@ -60,7 +60,8 @@ color: rgb(255, 253, 189)</string>
    <property name="font">
     <font>
      <family>Monotype Corsiva</family>
-     <pointsize>16</pointsize>
+     <pointsize>18</pointsize>
+     <italic>false</italic>
     </font>
    </property>
    <property name="styleSheet">
@@ -68,7 +69,7 @@ color: rgb(255, 253, 189)</string>
 color: rgb(255, 253, 189)</string>
    </property>
    <property name="text">
-    <string>Я передумал...</string>
+    <string>Отмена</string>
    </property>
   </widget>
   <widget class="QLabel" name="title">
@@ -157,7 +158,7 @@ color: rgb(255, 253, 189)</string>
       <property name="font">
        <font>
         <family>Monotype Corsiva</family>
-        <pointsize>16</pointsize>
+        <pointsize>18</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -183,7 +184,7 @@ color: rgb(255, 253, 189)</string>
       <property name="font">
        <font>
         <family>Monotype Corsiva</family>
-        <pointsize>16</pointsize>
+        <pointsize>18</pointsize>
        </font>
       </property>
       <property name="styleSheet">

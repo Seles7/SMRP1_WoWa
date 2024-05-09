@@ -15,6 +15,7 @@ class Users(QMainWindow, Ui_UsersWindow):
         self.setupUi(self)
         self.session = get_session()
         self.item = QListWidgetItem()
+        self.push_goBack.clicked.connect(self.goBack())
         self.update_table()
 
     def update_table(self):
@@ -26,6 +27,8 @@ class Users(QMainWindow, Ui_UsersWindow):
             self.tableWidget_Users.setItem(row_position, 0, QTableWidgetItem(str(user.id)))
             self.tableWidget_Users.setItem(row_position, 1, QTableWidgetItem(user.username))
 
-
     def showWindow(self):
         self.show()
+
+    def goBack(self):
+        self.close()

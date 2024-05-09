@@ -38,7 +38,7 @@
     <property name="font">
      <font>
       <family>Monotype Corsiva</family>
-      <pointsize>24</pointsize>
+      <pointsize>22</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -61,7 +61,7 @@ color: rgb(255, 253, 189)</string>
     <property name="font">
      <font>
       <family>Monotype Corsiva</family>
-      <pointsize>19</pointsize>
+      <pointsize>22</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -69,7 +69,7 @@ color: rgb(255, 253, 189)</string>
 color: rgb(255, 253, 189)</string>
     </property>
     <property name="text">
-     <string>Выйти из приложения</string>
+     <string>Выйти</string>
     </property>
    </widget>
    <widget class="QPushButton" name="SignUp">
@@ -84,7 +84,7 @@ color: rgb(255, 253, 189)</string>
     <property name="font">
      <font>
       <family>Monotype Corsiva</family>
-      <pointsize>24</pointsize>
+      <pointsize>22</pointsize>
      </font>
     </property>
     <property name="styleSheet">

@@ -105,7 +105,7 @@ color: rgb(255, 253, 189)</string>
      <bool>true</bool>
     </property>
     <property name="rowCount">
-     <number>2</number>
+     <number>0</number>
     </property>
     <property name="columnCount">
      <number>2</number>
@@ -137,8 +137,6 @@ color: rgb(255, 253, 189)</string>
     <attribute name="verticalHeaderShowSortIndicator" stdset="0">
      <bool>false</bool>
     </attribute>
-    <row/>
-    <row/>
     <column>
      <property name="text">
       <string>id</string>
@@ -178,7 +176,7 @@ color: rgb(255, 253, 189)</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../../images/resource1.qrc">:/pins1/tavern.jpg</pixmap>
+     <pixmap resource="../../images/resource1.qrc">:/pins1/tavern2.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>

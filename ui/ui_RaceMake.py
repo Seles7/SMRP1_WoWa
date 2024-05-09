@@ -99,8 +99,7 @@ class Ui_RaceWidget(object):
         self.push_GoBack.setText(_translate("RaceWidget", "Я передумал..."))
         self.label_Name.setText(_translate("RaceWidget", "Название"))
         self.label_Authorization.setText(_translate("RaceWidget", "Создание расы"))
-
-import test_rc
+import images.resource1_rc
 
 
 if __name__ == "__main__":

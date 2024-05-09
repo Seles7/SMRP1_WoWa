@@ -1,7 +1,7 @@
 from typing import Iterable, Callable
 
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QMainWindow, QTableWidgetItem, QDialog
+from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QDialog
 
 from ui import Ui_AuthorizationWidget
 from .mainMenu_window import MainMenu
@@ -28,7 +28,9 @@ class Authorization(QWidget, Ui_AuthorizationWidget):
 
         new_user = User(username=username_input, password=password_input)
 
-        for user in self.session:
+        users: User = self.session.query(User)
+
+        for user in users:
             if str(new_user.username) == str(user.username) \
                     and str(new_user.password) == str(user.password):
                 self.passTo_mainWindow.item.setText(new_user.username)
