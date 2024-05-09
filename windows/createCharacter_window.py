@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QListWidgetItem, QDialog
 
 from ui import Ui_CreateCharacterWidget
 
-from database import get_session, Character
+from database import get_session, Character, Race, Spec, RaceSpec
 
 class CreateCharacter(QWidget, Ui_CreateCharacterWidget):
     def __init__(self):
@@ -21,18 +21,32 @@ class CreateCharacter(QWidget, Ui_CreateCharacterWidget):
         race_input = self.LineEdit_Race.text()
         spec_input = self.LineEdit_Spec.text()
 
+        characters: Character = self.session.query(Character)
+        races: Race = self.session.query(Race)
+        specs: Spec = self.session.query(Spec)
+        racesSpecs: RaceSpec = self.session.query(RaceSpec)
 
-        new_character = Character(nickname=nickname_input, race=race_input, spec=spec_input)
-
-        users: User = self.session.query(User)
-
-        for user in users:
-            if str(new_user.username) == str(user.username) \
-                    and str(new_user.password) == str(user.password):
-                self.passTo_mainWindow.item.setText(new_user.username)
-                self.passTo_mainWindow.showWindow()
+        for race in races:
+            if str(race_input) == str(race.title):
+                id_race = race.id
+        for spec in specs:
+            if str(spec_input) == str(spec.title):
+                id_spec = spec.id
+        for raceSpec in racesSpecs:
+            if str(raceSpec.race_id) == id_race and raceSpec.spec_id == id_spec:
+                idRaceSpec = raceSpec.id
+            else:
                 self.custom_close()
-        self.open_userAlreadyRegist()
+
+        for character in characters:
+            if str(nickname_input) == str(character.nickname):
+                self.custom_close()
+
+            new_character = Character(nickname=nickname_input, level=1, id_raceSpec=idRaceSpec, id_guild=1)
+            self.session.add(new_character)
+            self.session.commit()
+            self.custom_close()
+
 
     def open_userAlreadyRegist(self):
         self.custom_close()
