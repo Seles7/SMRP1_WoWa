@@ -16,7 +16,7 @@ class Guilds(QMainWindow, Ui_GuildsWindow):
         self.setupUi(self)
         self.session = get_session()
         self.item = QListWidgetItem()
-        #self.push_createGuild.clicked.connect(self.open_createGuildWindow)
+        self.push_createGuild.clicked.connect(self.open_createGuildWindow)
         self.push_goBack.clicked.connect(self.goBack)
 
         self.passTo_createGuildWindow = CreateGuild()
@@ -37,7 +37,7 @@ class Guilds(QMainWindow, Ui_GuildsWindow):
             self.tableWidget_Guilds.insertRow(row_position)
             self.tableWidget_Guilds.setItem(row_position, 0, QTableWidgetItem(str(guild.id)))
             self.tableWidget_Guilds.setItem(row_position, 1, QTableWidgetItem(str(guild.title)))
-            self.tableWidget_Guilds.setItem(row_position, 2, QTableWidgetItem(count))
+            self.tableWidget_Guilds.setItem(row_position, 2, QTableWidgetItem(str(count)))
 
     def open_createGuildWindow(self):
         self.passTo_createGuildWindow.item.setText(self.item.text())
