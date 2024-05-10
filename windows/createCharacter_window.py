@@ -9,9 +9,10 @@ from database import get_session, Character, Race, Spec, RaceSpec, User
 
 
 class CreateCharacter(QWidget, Ui_CreateCharacterWidget):
-    def __init__(self):
+    def __init__(self, callbacks: Iterable[Callable]):
         super().__init__()
         self.create_window = None
+        self.callbacks = callbacks
         self.setupUi(self)
         self.session = get_session()
         self.item = QListWidgetItem()

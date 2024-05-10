@@ -4,7 +4,8 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QMainWindow, QTableWidgetItem, QListWidgetItem, QDialog
 
 from ui import Ui_RacesSpecsWindow
-#from .createRace_window import
+from .createRace_window import CreateRace
+from .createSpec_window import CreateSpec
 
 from database import get_session, Race, Spec, RaceSpec
 
@@ -17,16 +18,25 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
         self.session = get_session()
         self.item = QListWidgetItem()
 
+        self.push_addRace.clicked.connect(self.openCreateRaceWindow)
+        self.push_addSpec.clicked.connect(self.openCreateSpecWindow)
+        self.push_addRaceSpec.clicked.connect(self.openCreateRaceSpecWindow)
+        self.push_goBack_2.clicked.connect(self.update_table)
         self.push_goBack.clicked.connect(self.exitFromWindow)
-        self.push_addRace.clicked.connect(self.exitFromWindow)
-        self.push_addSpec.clicked.connect(self.exitFromWindow)
-        self.push_addRaceSpec.clicked.connect(self.exitFromWindow)
-
-        #self.passTo_createRaceWindow = Cre(
 
         self.update_table()
 
     def update_table(self):
+        print(self.item.text())
+        if self.item.text() != "creator" and self.item.text() != "developer":
+            self.push_addRace.hide()
+            self.push_addSpec.hide()
+            self.push_addRaceSpec.hide()
+        if self.item.text() == "creator" or self.item.text() == "developer":
+            self.push_addRace.show()
+            self.push_addSpec.show()
+            self.push_addRaceSpec.show()
+
         races = self.session.query(Race).order_by(Race.id).all()
         specs = self.session.query(Spec).order_by(Spec.id).all()
         racesSpecs = self.session.query(RaceSpec).order_by(RaceSpec.id).all()
@@ -59,33 +69,23 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
             self.tableWidget_RacesSpecs.setItem(row_position, 0, QTableWidgetItem(str(race_inRacesSpecs)))
             self.tableWidget_RacesSpecs.setItem(row_position, 1, QTableWidgetItem(str(spec_inRacesSpecs)))
 
+    def openCreateRaceWindow(self):
+        print(44444)
+        self.create_window = CreateRace(self)
+        print(55555)
+        self.create_window.show()
+
+    def openCreateSpecWindow(self):
+        self.create_window = CreateSpec(self)
+        self.create_window.show()
+
+    def openCreateRaceSpecWindow(self):
+        pass
+
     def showWindow(self):
         self.show()
 
     def exitFromWindow(self):
+        self.update_table()
         self.close()
 
-'''
-    def openCreateRaceWindow(self):
-        self.passTo_SovmestimostiWindow.item.setText(self.item.text())
-        self.passTo_SovmestimostiWindow.showWindow()
-
-    def openCreateSpecWindow(self):
-        pass
-
-    def openCreateRaceSpecWindow(self):
-        pass
-'''
-'''
-    def openRaceMake(self):
-        self.passTo_RaceMakeWindow.item.setText(self.item.text())
-        self.passTo_RaceMakeWindow.showWindow()
-
-    def openClassMake(self):
-        self.passTo_ClassMakeWindow.item.setText(self.item.text())
-        self.passTo_ClassMakeWindow.showWindow()
-
-    def openSovmestimosti(self):
-        self.passTo_SovmestimostiWindow.item.setText(self.item.text())
-        self.passTo_SovmestimostiWindow.showWindow()
-        '''

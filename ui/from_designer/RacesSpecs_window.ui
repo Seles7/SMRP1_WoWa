@@ -241,9 +241,9 @@ color: rgb(255, 253, 189)</string>
    <widget class="QPushButton" name="push_goBack">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>540</x>
       <y>440</y>
-      <width>171</width>
+      <width>131</width>
       <height>41</height>
      </rect>
     </property>
@@ -379,6 +379,29 @@ color: rgb(255, 253, 189)</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="push_goBack_2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>440</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monotype Corsiva</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));
+color: rgb(255, 253, 189)</string>
+    </property>
+    <property name="text">
+     <string>Обновить</string>
+    </property>
+   </widget>
    <zorder>img_background</zorder>
    <zorder>img_links</zorder>
    <zorder>img_specs</zorder>
@@ -395,6 +418,7 @@ color: rgb(255, 253, 189)</string>
    <zorder>push_addSpec</zorder>
    <zorder>push_goBack</zorder>
    <zorder>push_addRaceSpec</zorder>
+   <zorder>push_goBack_2</zorder>
   </widget>
  </widget>
  <resources>

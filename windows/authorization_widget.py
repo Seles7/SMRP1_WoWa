@@ -10,7 +10,6 @@ from database import get_session, User
 
 
 class Authorization(QWidget, Ui_AuthorizationWidget):
-
     def __init__(self, callbacks: Iterable[Callable]):
         super().__init__()
         self.create_window = None
