@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QWidget, QMainWindow, QTableWidgetItem, QListWidgetI
 from ui import Ui_RacesSpecsWindow
 from .createRace_window import CreateRace
 from .createSpec_window import CreateSpec
+from .createCompatibility_window import CreateCompatibility
 
 from database import get_session, Race, Spec, RaceSpec
 
@@ -78,7 +79,8 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
         self.create_window.show()
 
     def openCreateRaceSpecWindow(self):
-        pass
+        self.create_window = CreateCompatibility(self)
+        self.create_window.show()
 
     def showWindow(self):
         self.show()

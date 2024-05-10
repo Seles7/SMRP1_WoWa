@@ -121,7 +121,7 @@ color: rgb(255, 253, 189)</string>
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLineEdit" name="lineEdit_Password">
+     <widget class="QLineEdit" name="lineEdit_Spec">
       <property name="font">
        <font>
         <pointsize>18</pointsize>
@@ -130,7 +130,7 @@ color: rgb(255, 253, 189)</string>
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLineEdit" name="lineEdit_Name">
+     <widget class="QLineEdit" name="lineEdit_Race">
       <property name="font">
        <font>
         <pointsize>18</pointsize>
