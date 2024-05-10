@@ -1,5 +1,5 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QMainWindow, QListWidgetItem
+from PyQt5.QtWidgets import QMainWindow, QListWidgetItem, QDialog
 
 from ui import Ui_MainMenuWindow
 
@@ -49,8 +49,9 @@ class MainMenu(QMainWindow, Ui_MainMenuWindow):
 
     def exitFromAccount(self):
         dialog_warning = Dialog("Вы уверены что хотите выйти?")
-        dialog_warning.exec_()
-        self.custom_close()
+        ret_value = dialog_warning.exec_()
+        if ret_value == QDialog.Accepted:
+            self.custom_close()
 
     def showWindow(self):
         self.show()
