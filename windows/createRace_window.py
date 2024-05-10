@@ -1,45 +1,40 @@
 from typing import Iterable, Callable
 
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QMainWindow, QTableWidgetItem, QListWidgetItem, QDialog
+from PyQt5.QtWidgets import QWidget, QListWidgetItem, QDialog
 
-from ui import Ui_RaceWidget
+from ui import Ui_CreateRaceWidget
 
-from database import get_session, Race, Spec, RaceSpec
+from database import get_session, Race
 
-class racemake(QMainWindow, Ui_RaceWidget):
-    def __init__(self):
+
+class CreateRace(QWidget, Ui_CreateRaceWidget):
+    def __init__(self, callbacks: Iterable[Callable]):
         super().__init__()
         self.create_window = None
+        self.callbacks = callbacks
         self.setupUi(self)
         self.session = get_session()
-        self.item = QListWidgetItem()
-        self.update()
+        self.push_GoBack.clicked.connect(self.custom_close)
+        self.push_AceptCreate.clicked.connect(self.acceptCreateRace)
+        print(66666)
 
-    class racemake(QMainWindow, Ui_RaceWidget):
-        def __init__(self):
-            super().__init__()
-            self.create_window = None
-            self.setupUi(self)
-            self.session = get_session()
-            self.item = QListWidgetItem()
-            self.update()
+    def acceptCreateRace(self):
+        race_input = self.lineEdit_Name.text()
+        key = 1
 
-        def createRace(self):
-            race_input = self.lineEdit_Name.text()
-
+        for race in self.session:
+            if str(race_input) == str(race.title):
+                key = 0
+                self.open_raceAlreadyRegist()
+        if key == 1:
             new_race = Race(title=race_input)
-
-            for race in self.session:
-                if str(new_race.title) == str(race.title):
-                    self.open_specAlreadyRegist()
-
             self.session.add(new_race)
             self.session.commit()
             self.custom_close()
 
-        def open_specAlreadyRegist(self):
-            self.custom_close()
+    def open_raceAlreadyRegist(self):
+        self.custom_close()
 
-        def custom_close(self):
-            self.close()
+    def custom_close(self):
+        self.close()

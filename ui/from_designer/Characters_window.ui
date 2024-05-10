@@ -66,9 +66,9 @@ color: rgb(255, 253, 189)</string>
    <widget class="QPushButton" name="push_goBackP">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>530</x>
       <y>440</y>
-      <width>171</width>
+      <width>141</width>
       <height>41</height>
      </rect>
     </property>
@@ -91,7 +91,7 @@ color: rgb(255, 253, 189)</string>
      <rect>
       <x>230</x>
       <y>440</y>
-      <width>131</width>
+      <width>141</width>
       <height>41</height>
      </rect>
     </property>
@@ -105,16 +105,16 @@ color: rgb(255, 253, 189)</string>
      <string notr="true">color: rgb(255, 253, 189)</string>
     </property>
     <property name="text">
-     <string>все персонажи</string>
+     <string>свои персонажи</string>
     </property>
    </widget>
    <widget class="QLabel" name="Title_Characters">
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>10</y>
+      <y>0</y>
       <width>201</width>
-      <height>41</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
@@ -237,6 +237,29 @@ color: rgb(255, 253, 189)</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="push_update">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>440</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monotype Corsiva</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));
+color: rgb(255, 253, 189)</string>
+    </property>
+    <property name="text">
+     <string>Обновить</string>
+    </property>
+   </widget>
    <zorder>label</zorder>
    <zorder>label_2</zorder>
    <zorder>push_CreateCharacter</zorder>
@@ -244,6 +267,7 @@ color: rgb(255, 253, 189)</string>
    <zorder>checkBox</zorder>
    <zorder>Title_Characters</zorder>
    <zorder>table_Characters</zorder>
+   <zorder>push_update</zorder>
   </widget>
  </widget>
  <resources>

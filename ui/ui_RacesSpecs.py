@@ -15,6 +15,8 @@ class Ui_RacesSpecsWindow(object):
     def setupUi(self, RacesSpecsWindow):
         RacesSpecsWindow.setObjectName("RacesSpecsWindow")
         RacesSpecsWindow.resize(700, 500)
+        RacesSpecsWindow.setMinimumSize(QtCore.QSize(700, 500))
+        RacesSpecsWindow.setMaximumSize(QtCore.QSize(700, 500))
         self.centralwidget = QtWidgets.QWidget(RacesSpecsWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.Title = QtWidgets.QLabel(self.centralwidget)
@@ -101,7 +103,7 @@ class Ui_RacesSpecsWindow(object):
 "color: rgb(255, 253, 189)")
         self.push_addSpec.setObjectName("push_addSpec")
         self.push_goBack = QtWidgets.QPushButton(self.centralwidget)
-        self.push_goBack.setGeometry(QtCore.QRect(500, 440, 171, 41))
+        self.push_goBack.setGeometry(QtCore.QRect(540, 440, 131, 41))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
         font.setPointSize(18)
@@ -148,6 +150,15 @@ class Ui_RacesSpecsWindow(object):
         self.img_specs.setPixmap(QtGui.QPixmap(":/pins1/pergament2.png"))
         self.img_specs.setScaledContents(True)
         self.img_specs.setObjectName("img_specs")
+        self.push_goBack_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.push_goBack_2.setGeometry(QtCore.QRect(400, 440, 131, 41))
+        font = QtGui.QFont()
+        font.setFamily("Monotype Corsiva")
+        font.setPointSize(18)
+        self.push_goBack_2.setFont(font)
+        self.push_goBack_2.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"
+"color: rgb(255, 253, 189)")
+        self.push_goBack_2.setObjectName("push_goBack_2")
         self.img_background.raise_()
         self.img_links.raise_()
         self.img_specs.raise_()
@@ -164,6 +175,7 @@ class Ui_RacesSpecsWindow(object):
         self.push_addSpec.raise_()
         self.push_goBack.raise_()
         self.push_addRaceSpec.raise_()
+        self.push_goBack_2.raise_()
         RacesSpecsWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(RacesSpecsWindow)
@@ -192,6 +204,7 @@ class Ui_RacesSpecsWindow(object):
         self.push_addSpec.setText(_translate("RacesSpecsWindow", "Добавить"))
         self.push_goBack.setText(_translate("RacesSpecsWindow", "Назад"))
         self.push_addRaceSpec.setText(_translate("RacesSpecsWindow", "Добавить"))
+        self.push_goBack_2.setText(_translate("RacesSpecsWindow", "Обновить"))
 import images.resource1_rc
 
 
