@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QWidget, QListWidgetItem, QDialog
 from ui import Ui_CreateRaceWidget
 
 from database import get_session, Race
+from .dialog_window import Dialog
 
 
 class CreateRace(QWidget, Ui_CreateRaceWidget):
@@ -34,6 +35,8 @@ class CreateRace(QWidget, Ui_CreateRaceWidget):
             self.custom_close()
 
     def open_raceAlreadyRegist(self):
+        dialog_warning = Dialog("Такая раса уже существует.")
+        dialog_warning.exec_()
         self.custom_close()
 
     def custom_close(self):

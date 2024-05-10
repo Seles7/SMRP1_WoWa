@@ -7,6 +7,7 @@ from .characters_window import Characters
 from .users_window import Users
 from .guilds_window import Guilds
 from .racesSpecs_window import RacesSpecs
+from .dialog_window import Dialog
 
 from database import get_session
 
@@ -47,6 +48,8 @@ class MainMenu(QMainWindow, Ui_MainMenuWindow):
         self.passTo_rasesSpecsWindow.showWindow()
 
     def exitFromAccount(self):
+        dialog_warning = Dialog("Вы уверены что хотите выйти?")
+        dialog_warning.exec_()
         self.custom_close()
 
     def showWindow(self):

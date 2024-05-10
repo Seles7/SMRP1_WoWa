@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QWidget, QListWidgetItem, QDialog
 from ui import Ui_CreateSpecWidget
 
 from database import get_session, Spec
+from .dialog_window import Dialog
 
 
 class CreateSpec(QWidget, Ui_CreateSpecWidget):
@@ -33,6 +34,8 @@ class CreateSpec(QWidget, Ui_CreateSpecWidget):
             self.custom_close()
 
     def open_specAlreadyRegist(self):
+        dialog_warning = Dialog("Такая профессия уже существует.")
+        dialog_warning.exec_()
         self.custom_close()
 
     def custom_close(self):

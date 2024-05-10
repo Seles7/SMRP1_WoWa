@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QMainWindow, QTableWidgetItem
 from ui import Ui_EntranceWindow
 from .registration_widget import Registration
 from .authorization_widget import Authorization
+from .dialog_window import Dialog
 
 
 from database import get_session
@@ -28,4 +29,6 @@ class Entrance(QMainWindow, Ui_EntranceWindow):
         self.create_window.show()
 
     def exitFromWindow(self):
+        dialog_warning = Dialog("Вы уверены что хотите выйти?")
+        dialog_warning.exec_()
         self.close()
