@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QWidget, QMainWindow, QTableWidgetItem, QDialog
 from ui import Ui_RegistrationWidget
 
 from database import get_session, User
+from .dialog_window import Dialog
 
 
 class Registration(QWidget, Ui_RegistrationWidget):
@@ -33,6 +34,8 @@ class Registration(QWidget, Ui_RegistrationWidget):
         self.custom_close()
 
     def open_userAlreadyRegist(self):
+        dialog_warning = Dialog("Такой пользователь уже существует.")
+        dialog_warning.exec_()
         self.custom_close()
 
     def custom_close(self):
