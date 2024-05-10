@@ -17,7 +17,6 @@ class CreateRace(QWidget, Ui_CreateRaceWidget):
         self.session = get_session()
         self.push_GoBack.clicked.connect(self.custom_close)
         self.push_AceptCreate.clicked.connect(self.acceptCreateRace)
-        print(66666)
 
     def acceptCreateRace(self):
         race_input = self.lineEdit_Name.text()
