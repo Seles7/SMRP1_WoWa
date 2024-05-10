@@ -9,16 +9,14 @@ from database import get_session, Character, Race, Spec, RaceSpec, User
 
 
 class CreateCharacter(QWidget, Ui_CreateCharacterWidget):
-    def __init__(self, callbacks: Iterable[Callable]):
+    def __init__(self):
         super().__init__()
         self.create_window = None
-        self.callbacks = callbacks
         self.setupUi(self)
         self.session = get_session()
         self.item = QListWidgetItem()
         self.push_CreateCharacter.clicked.connect(self.createRace)
         self.push_GoBack.clicked.connect(self.custom_close)
-
 
     def createRace(self):
         nickname_input = self.LineEdit_Name.text()

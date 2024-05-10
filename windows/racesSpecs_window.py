@@ -21,7 +21,7 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
         self.push_addRace.clicked.connect(self.openCreateRaceWindow)
         self.push_addSpec.clicked.connect(self.openCreateSpecWindow)
         self.push_addRaceSpec.clicked.connect(self.openCreateRaceSpecWindow)
-        self.push_goBack_2.clicked.connect(self.update_table)
+        self.push_update.clicked.connect(self.update_table)
         self.push_goBack.clicked.connect(self.exitFromWindow)
 
         self.update_table()
@@ -70,9 +70,7 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
             self.tableWidget_RacesSpecs.setItem(row_position, 1, QTableWidgetItem(str(spec_inRacesSpecs)))
 
     def openCreateRaceWindow(self):
-        print(44444)
         self.create_window = CreateRace(self)
-        print(55555)
         self.create_window.show()
 
     def openCreateSpecWindow(self):

@@ -9,13 +9,13 @@ from database import get_session, Guild, Character, User
 
 
 class CreateGuild(QWidget, Ui_CreateGuildWidget):
-    def __init__(self, callbacks: Iterable[Callable]):
+    def __init__(self):
         super().__init__()
         self.create_window = None
-        self.callbacks = callbacks
         self.setupUi(self)
         self.session = get_session()
         self.item = QListWidgetItem()
+        self.push_CreateGuild.clicked.connect(self.createGuild)
         self.push_GoBack.clicked.connect(self.goBack)
 
     def createGuild(self):
