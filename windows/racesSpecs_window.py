@@ -40,7 +40,7 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
 
         races = self.session.query(Race).order_by(Race.id).all()
         specs = self.session.query(Spec).order_by(Spec.id).all()
-        racesSpecs = self.session.query(RaceSpec).order_by(RaceSpec.id).all()
+        racesSpecs = self.session.query(RaceSpec).order_by(RaceSpec.race_id).all()
 
         self.tableWidget_Races.setRowCount(0)
         for race in races:

@@ -32,4 +32,4 @@ class Entrance(QMainWindow, Ui_EntranceWindow):
         dialog_warning = Dialog("Вы уверены что хотите выйти?")
         ret_value = dialog_warning.exec_()
         if ret_value == QDialog.Accepted:
-            self.custom_close()
+            self.close()
