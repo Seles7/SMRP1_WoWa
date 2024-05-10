@@ -20,18 +20,22 @@ class Registration(QWidget, Ui_RegistrationWidget):
         self.push_GoBack.clicked.connect(self.custom_close)
 
     def createUser(self):
+        isFound = False
         username_input = self.lineEdit_Name.text()
         password_input = self.lineEdit_Password.text()
 
         new_user = User(username=username_input, password=password_input)
 
-        for user in self.session:
+        users = self.session.query(User)
+        for user in users:
             if str(new_user.username) == str(user.username):
+                isFound = True
                 self.open_userAlreadyRegist()
 
-        self.session.add(new_user)
-        self.session.commit()
-        self.custom_close()
+        if isFound == False:
+            self.session.add(new_user)
+            self.session.commit()
+            self.custom_close()
 
     def open_userAlreadyRegist(self):
         dialog_warning = Dialog("Такой пользователь уже существует.")
