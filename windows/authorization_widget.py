@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QDialog
 
 from ui import Ui_AuthorizationWidget
 from .mainMenu_window import MainMenu
+from .dialog_window import Dialog
 
 from database import get_session, User
 
@@ -21,6 +22,7 @@ class Authorization(QWidget, Ui_AuthorizationWidget):
         self.passTo_mainWindow = MainMenu()
 
     def enterUser(self):
+        self.isFind = False
         username_input = self.lineEdit_Name.text()
         password_input = self.lineEdit_Password.text()
 
@@ -32,12 +34,17 @@ class Authorization(QWidget, Ui_AuthorizationWidget):
             print(type(user.id))
             if str(new_user.username) == str(user.username) \
                     and str(new_user.password) == str(user.password):
+                self.isFind = True
                 self.passTo_mainWindow.item.setText(new_user.username)
                 self.passTo_mainWindow.showWindow()
                 self.custom_close()
-        self.open_userAlreadyRegist()
 
-    def open_userAlreadyRegist(self):
+        if self.isFind == False:
+            self.open_userInvalidInput()
+
+    def open_userInvalidInput(self):
+        dialog_warning = Dialog("Некорректный ввод! Проверьте правильность ввода данных.")
+        dialog_warning.exec_()
         self.custom_close()
 
     def custom_close(self):
