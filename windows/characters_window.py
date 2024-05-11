@@ -5,8 +5,10 @@ from PyQt5.QtWidgets import QWidget, QMainWindow, QTableWidgetItem, QListWidgetI
 
 from ui import Ui_CharactersWindow
 from .createCharacter_window import CreateCharacter
+from .changeCharacter_window import ChangeCharacter
 
 from database import get_session, Character, Race, Spec, RaceSpec, Guild, User
+
 
 class Characters(QMainWindow, Ui_CharactersWindow):
     def __init__(self):
@@ -15,13 +17,17 @@ class Characters(QMainWindow, Ui_CharactersWindow):
         self.setupUi(self)
         self.session = get_session()
         self.item = QListWidgetItem()
+        self.isCheck = None
 
         self.push_goBackP.clicked.connect(self.goBack)
         self.push_CreateCharacter.clicked.connect(self.open_createCharacterWindow)
         self.push_update.clicked.connect(self.update_table)
+
         self.checkBox.clicked.connect(self.update_table)
+        self.table_Characters.cellDoubleClicked.connect(self.open_changeCharacterWindow)
 
         self.passTo_createCharacterWidget = CreateCharacter()
+        self.passTo_changeCharacterWidget = ChangeCharacter()
 
         self.update_table()
 
@@ -33,7 +39,7 @@ class Characters(QMainWindow, Ui_CharactersWindow):
         specs = self.session.query(Spec).order_by(Spec.id).all()
         racesSpecs = self.session.query(RaceSpec).order_by(RaceSpec.id).all()
 
-        isCheck = self.checkBox.isChecked()
+        self.isCheck = self.checkBox.isChecked()
 
         self.table_Characters.setRowCount(0)
         for character in characters:
@@ -41,7 +47,7 @@ class Characters(QMainWindow, Ui_CharactersWindow):
                 if user.id == character.id_user:
                     user_ofChar = user.username
 
-            if isCheck:
+            if self.isCheck:
                 if user_ofChar != self.item.text():
                     continue
 
@@ -70,6 +76,15 @@ class Characters(QMainWindow, Ui_CharactersWindow):
     def open_createCharacterWindow(self):
         self.passTo_createCharacterWidget.item.setText(self.item.text())
         self.passTo_createCharacterWidget.showWindow()
+
+    def open_changeCharacterWindow(self, row, column):
+        character_id = int(self.table_Characters.item(row, 0).text())
+        if self.isCheck:
+            self.passTo_changeCharacterWidget.item.setText(str(character_id))
+            self.passTo_changeCharacterWidget.targetingCharacter()
+            self.passTo_changeCharacterWidget.showWindow()
+        else:
+            return
 
     def goBack(self):
         self.close()

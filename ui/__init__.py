@@ -13,5 +13,6 @@ from .ui_CreateGuild import Ui_CreateGuildWidget
 from .ui_CreateRace import Ui_CreateRaceWidget
 from .ui_CreateSpec import Ui_CreateSpecWidget
 from .ui_CreateCompatibility import Ui_CompatibilityWidget
+from .ui_ChangeCharacter import Ui_ChangeCharacterWidget
 
 from .ui_dialog import Ui_Dialog

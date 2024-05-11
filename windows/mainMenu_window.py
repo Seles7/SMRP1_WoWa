@@ -31,12 +31,11 @@ class MainMenu(QMainWindow, Ui_MainMenuWindow):
         self.passTo_rasesSpecsWindow = RacesSpecs()
 
     def openHeroes(self):
-        print(self.item.text())
         self.passTo_charactersWindow.item.setText(self.item.text())
         self.passTo_charactersWindow.showWindow()
 
     def openPlayers(self):
-        #self.passTo_usersWindow.item.setText(self.item.text())
+        self.passTo_usersWindow.item.setText(self.item.text())
         self.passTo_usersWindow.showWindow()
 
     def openGuilds(self):

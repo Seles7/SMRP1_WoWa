@@ -28,7 +28,6 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
         self.update_table()
 
     def update_table(self):
-        print(self.item.text())
         if self.item.text() != "creator" and self.item.text() != "developer":
             self.push_addRace.hide()
             self.push_addSpec.hide()

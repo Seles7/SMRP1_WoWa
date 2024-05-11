@@ -11,13 +11,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_CreateGuildWidget(object):
-    def setupUi(self, CreateGuildWidget):
-        CreateGuildWidget.setObjectName("CreateGuildWidget")
-        CreateGuildWidget.resize(400, 250)
-        CreateGuildWidget.setMinimumSize(QtCore.QSize(400, 250))
-        CreateGuildWidget.setMaximumSize(QtCore.QSize(400, 250))
-        self.push_GoBack = QtWidgets.QPushButton(CreateGuildWidget)
+class Ui_ChangeCharacterWidget(object):
+    def setupUi(self, ChangeCharacterWidget):
+        ChangeCharacterWidget.setObjectName("ChangeCharacterWidget")
+        ChangeCharacterWidget.resize(400, 250)
+        ChangeCharacterWidget.setMinimumSize(QtCore.QSize(400, 250))
+        ChangeCharacterWidget.setMaximumSize(QtCore.QSize(400, 250))
+        self.push_GoBack = QtWidgets.QPushButton(ChangeCharacterWidget)
         self.push_GoBack.setGeometry(QtCore.QRect(240, 200, 151, 41))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
@@ -27,7 +27,7 @@ class Ui_CreateGuildWidget(object):
         self.push_GoBack.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"
 "color: rgb(255, 253, 189)")
         self.push_GoBack.setObjectName("push_GoBack")
-        self.title = QtWidgets.QLabel(CreateGuildWidget)
+        self.title = QtWidgets.QLabel(ChangeCharacterWidget)
         self.title.setGeometry(QtCore.QRect(90, 10, 221, 31))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
@@ -37,21 +37,21 @@ class Ui_CreateGuildWidget(object):
 "\n"
 "")
         self.title.setObjectName("title")
-        self.img_title = QtWidgets.QLabel(CreateGuildWidget)
+        self.img_title = QtWidgets.QLabel(ChangeCharacterWidget)
         self.img_title.setGeometry(QtCore.QRect(40, 10, 321, 41))
         self.img_title.setStyleSheet("")
         self.img_title.setText("")
         self.img_title.setPixmap(QtGui.QPixmap(":/pins1/pergament2.png"))
         self.img_title.setScaledContents(True)
         self.img_title.setObjectName("img_title")
-        self.img_background = QtWidgets.QLabel(CreateGuildWidget)
+        self.img_background = QtWidgets.QLabel(ChangeCharacterWidget)
         self.img_background.setGeometry(QtCore.QRect(0, 0, 400, 250))
         self.img_background.setStyleSheet("background-image: url(:/newPrefix/Desktop/Прочее/Vorota.png);")
         self.img_background.setText("")
         self.img_background.setPixmap(QtGui.QPixmap(":/pins1/heroes.jpg"))
         self.img_background.setScaledContents(True)
         self.img_background.setObjectName("img_background")
-        self.formLayoutWidget_2 = QtWidgets.QWidget(CreateGuildWidget)
+        self.formLayoutWidget_2 = QtWidgets.QWidget(ChangeCharacterWidget)
         self.formLayoutWidget_2.setGeometry(QtCore.QRect(20, 90, 361, 81))
         self.formLayoutWidget_2.setObjectName("formLayoutWidget_2")
         self.formLayout_2 = QtWidgets.QFormLayout(self.formLayoutWidget_2)
@@ -90,7 +90,7 @@ class Ui_CreateGuildWidget(object):
         self.comboBox.setFont(font)
         self.comboBox.setObjectName("comboBox")
         self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.comboBox)
-        self.push_delete = QtWidgets.QPushButton(CreateGuildWidget)
+        self.push_delete = QtWidgets.QPushButton(ChangeCharacterWidget)
         self.push_delete.setGeometry(QtCore.QRect(20, 202, 91, 41))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
@@ -106,25 +106,25 @@ class Ui_CreateGuildWidget(object):
         self.formLayoutWidget_2.raise_()
         self.push_delete.raise_()
 
-        self.retranslateUi(CreateGuildWidget)
-        QtCore.QMetaObject.connectSlotsByName(CreateGuildWidget)
+        self.retranslateUi(ChangeCharacterWidget)
+        QtCore.QMetaObject.connectSlotsByName(ChangeCharacterWidget)
 
-    def retranslateUi(self, CreateGuildWidget):
+    def retranslateUi(self, ChangeCharacterWidget):
         _translate = QtCore.QCoreApplication.translate
-        CreateGuildWidget.setWindowTitle(_translate("CreateGuildWidget", "Изменение персонажа"))
-        self.push_GoBack.setText(_translate("CreateGuildWidget", "Назад"))
-        self.title.setText(_translate("CreateGuildWidget", "Измение персонажа"))
-        self.push_levelUp.setText(_translate("CreateGuildWidget", "Повысить уровень"))
-        self.push_changeGuild.setText(_translate("CreateGuildWidget", "Сменить гильдию "))
-        self.push_delete.setText(_translate("CreateGuildWidget", "Удалить"))
+        ChangeCharacterWidget.setWindowTitle(_translate("ChangeCharacterWidget", "Изменение персонажа"))
+        self.push_GoBack.setText(_translate("ChangeCharacterWidget", "Назад"))
+        self.title.setText(_translate("ChangeCharacterWidget", "Измение персонажа"))
+        self.push_levelUp.setText(_translate("ChangeCharacterWidget", "Повысить уровень"))
+        self.push_changeGuild.setText(_translate("ChangeCharacterWidget", "Сменить гильдию "))
+        self.push_delete.setText(_translate("ChangeCharacterWidget", "Удалить"))
 import images.resource1_rc
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    CreateGuildWidget = QtWidgets.QWidget()
-    ui = Ui_CreateGuildWidget()
-    ui.setupUi(CreateGuildWidget)
-    CreateGuildWidget.show()
+    ChangeCharacterWidget = QtWidgets.QWidget()
+    ui = Ui_ChangeCharacterWidget()
+    ui.setupUi(ChangeCharacterWidget)
+    ChangeCharacterWidget.show()
     sys.exit(app.exec_())

@@ -51,9 +51,7 @@ class CreateCharacter(QWidget, Ui_CreateCharacterWidget):
         for character in characters:
             if str(nickname_input) == str(character.nickname):
                 self.custom_close()
-        print(idUser, id_race, id_spec, idRaceSpec)
         if idUser == -1 or id_race == -1 or id_spec == -1 or idRaceSpec == -1:
-            print("-1-1-1-1-1-1-1-1")
             self.custom_close()
         else:
             new_character = Character(nickname=nickname_input, level=1, id_user=idUser, id_racespec=idRaceSpec, id_guild=1)

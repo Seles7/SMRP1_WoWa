@@ -17,7 +17,9 @@ class Guilds(QMainWindow, Ui_GuildsWindow):
         self.setupUi(self)
         self.session = get_session()
         self.item = QListWidgetItem()
+
         self.push_createGuild.clicked.connect(self.open_createGuildWindow)
+        self.push_update.clicked.connect(self.update_table)
         self.push_goBack.clicked.connect(self.goBack)
 
         self.passTo_createGuildWindow = CreateGuild()

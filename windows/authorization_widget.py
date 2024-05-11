@@ -31,7 +31,6 @@ class Authorization(QWidget, Ui_AuthorizationWidget):
         users = self.session.query(User)
 
         for user in users:
-            print(type(user.id))
             if str(new_user.username) == str(user.username) \
                     and str(new_user.password) == str(user.password):
                 self.isFind = True
