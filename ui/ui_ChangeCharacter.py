@@ -68,6 +68,7 @@ class Ui_ChangeCharacterWidget(object):
         self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.push_levelUp)
         self.label_level = QtWidgets.QLabel(self.formLayoutWidget_2)
         font = QtGui.QFont()
+        font.setFamily("Monotype Corsiva")
         font.setPointSize(18)
         self.label_level.setFont(font)
         self.label_level.setStyleSheet("background-color: rgb(244, 244, 244);")

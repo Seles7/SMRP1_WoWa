@@ -71,9 +71,7 @@ class CreateCompatibility(QWidget, Ui_CompatibilityWidget):
             self.open_compatibilityAlreadyRegist()
 
     def open_compatibilityAlreadyRegist(self):
-        dialog_warning = Dialog("Некорректный Ввод! "
-                                "Проверьте правильность написания расы и класса и убедитель, "
-                                "что связи между ними нет.")
+        dialog_warning = Dialog("Данная связь уже существует!")
         dialog_warning.exec_()
         self.custom_close()
 

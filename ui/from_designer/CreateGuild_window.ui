@@ -154,6 +154,7 @@ color: rgb(255, 253, 189)</string>
      <widget class="QComboBox" name="comboBox_character">
       <property name="font">
        <font>
+        <family>Monotype Corsiva</family>
         <pointsize>18</pointsize>
        </font>
       </property>
@@ -180,6 +181,7 @@ color: rgb(255, 253, 189)</string>
      <widget class="QLineEdit" name="LineEdit_TitleGuild">
       <property name="font">
        <font>
+        <family>Monotype Corsiva</family>
         <pointsize>18</pointsize>
        </font>
       </property>

@@ -75,6 +75,8 @@ class Characters(QMainWindow, Ui_CharactersWindow):
 
     def open_createCharacterWindow(self):
         self.passTo_createCharacterWidget.item.setText(self.item.text())
+        self.passTo_createCharacterWidget.clearComboBoxes()
+        self.passTo_createCharacterWidget.updateComboBox_race()
         self.passTo_createCharacterWidget.showWindow()
 
     def open_changeCharacterWindow(self, row, column):

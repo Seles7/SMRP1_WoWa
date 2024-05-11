@@ -1,7 +1,7 @@
 from typing import Iterable, Callable
 
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QTableWidgetItem, QListWidgetItem, QDialog
+from PyQt5.QtWidgets import QWidget, QListWidgetItem, QDialog
 
 from ui import Ui_CreateCharacterWidget
 
@@ -17,11 +17,35 @@ class CreateCharacter(QWidget, Ui_CreateCharacterWidget):
         self.item = QListWidgetItem()
         self.push_CreateCharacter.clicked.connect(self.createRace)
         self.push_GoBack.clicked.connect(self.custom_close)
+        self.comboBox_race.currentTextChanged.connect(self.updateComboBox_spec)
+
+    def clearComboBoxes(self):
+        self.comboBox_race.clear()
+        self.comboBox_spec.clear()
+
+    def updateComboBox_race(self):
+        races = self.session.query(Race)
+        for race in races:
+            self.comboBox_race.addItem(race.title)
+
+    def updateComboBox_spec(self):
+        self.comboBox_spec.clear()
+        racesSpecs = self.session.query(RaceSpec)
+        races = self.session.query(Race)
+        specs = self.session.query(Spec)
+        for race in races:
+            if race.title == self.comboBox_race.currentText():
+                for raceSpec in racesSpecs:
+                    if raceSpec.race_id == race.id:
+                        for spec in specs:
+                            if spec.id == raceSpec.spec_id:
+                                self.comboBox_spec.addItem(spec.title)
+                break
 
     def createRace(self):
         nickname_input = self.LineEdit_Name.text()
-        race_input = self.LineEdit_Race.text()
-        spec_input = self.LineEdit_Spec.text()
+        race_input = self.comboBox_race.currentText()
+        spec_input = self.comboBox_spec.currentText()
         idUser = -1
         id_race = -1
         id_spec = -1

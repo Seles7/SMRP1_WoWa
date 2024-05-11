@@ -4,6 +4,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QListWidgetItem, QComboBox, QDialog
 
 from ui import Ui_CreateGuildWidget
+from .dialog_window import Dialog
 
 from database import get_session, Guild, Character, User
 
@@ -24,9 +25,6 @@ class CreateGuild(QWidget, Ui_CreateGuildWidget):
     def updateComboBox(self):
         characters = self.session.query(Character)
         users = self.session.query(User)
-        print()
-        print(self.item.text())
-        print()
         i_u = -1
         for user in users:
             if user.username == self.item.text():
@@ -36,9 +34,6 @@ class CreateGuild(QWidget, Ui_CreateGuildWidget):
                 self.comboBox_character.addItem(character.nickname)
 
     def createGuild(self):
-        print()
-        print(self.item.text())
-        print()
         titleIsFind = False
         nickname_input = self.comboBox_character.currentText()
         title_input = self.LineEdit_TitleGuild.text()
@@ -61,8 +56,11 @@ class CreateGuild(QWidget, Ui_CreateGuildWidget):
                 if character.nickname == nickname_input:
                     for guild in guilds:
                         if guild.id == idGuild:
-                            character.id_guild = idGuild
+                            exist_character: Character = self.session.query(Character).get(character.id)
+                            exist_character.id_guild = idGuild
                             self.session.commit()
+                            dialog_warning = Dialog("Гильдия создана!.")
+                            dialog_warning.exec()
 
             self.custom_close()
 
@@ -70,10 +68,15 @@ class CreateGuild(QWidget, Ui_CreateGuildWidget):
         self.custom_close()
 
     def goBack(self):
-        self.close()
+        self.custom_close()
 
     def showWindow(self):
-        self.show()
+        if self.comboBox_character.currentText() == "":
+            dialog_warning = Dialog("У вас нет ни одного персонажа! Вы не можете создать гильдию.")
+            dialog_warning.exec()
+            self.custom_close()
+        else:
+            self.show()
 
     def custom_close(self):
         self.close()
