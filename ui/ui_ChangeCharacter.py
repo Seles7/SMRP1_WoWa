@@ -14,6 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_ChangeCharacterWidget(object):
     def setupUi(self, ChangeCharacterWidget):
         ChangeCharacterWidget.setObjectName("ChangeCharacterWidget")
+        ChangeCharacterWidget.setWindowModality(QtCore.Qt.NonModal)
         ChangeCharacterWidget.resize(400, 250)
         ChangeCharacterWidget.setMinimumSize(QtCore.QSize(400, 250))
         ChangeCharacterWidget.setMaximumSize(QtCore.QSize(400, 250))

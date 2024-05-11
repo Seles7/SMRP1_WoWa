@@ -21,16 +21,19 @@ class CreateRace(QWidget, Ui_CreateRaceWidget):
 
     def acceptCreateRace(self):
         race_input = self.lineEdit_Name.text()
-        key = 1
+        races = self.session.query(Race)
+        key = False
 
-        for race in self.session:
+        for race in races:
             if str(race_input) == str(race.title):
-                key = 0
+                key = True
                 self.open_raceAlreadyRegist()
-        if key == 1:
+        if not key:
             new_race = Race(title=race_input)
             self.session.add(new_race)
             self.session.commit()
+            dialog_warning = Dialog("Раса успешно создана.")
+            dialog_warning.exec_()
             self.custom_close()
 
     def open_raceAlreadyRegist(self):

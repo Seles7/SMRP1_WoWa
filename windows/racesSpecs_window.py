@@ -1,7 +1,7 @@
 from typing import Iterable, Callable
 
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QMainWindow, QTableWidgetItem, QListWidgetItem, QDialog
+from PyQt5.QtWidgets import QComboBox, QMainWindow, QTableWidgetItem, QListWidgetItem, QDialog
 
 from ui import Ui_RacesSpecsWindow
 from .createRace_window import CreateRace
@@ -19,27 +19,47 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
         self.session = get_session()
         self.item = QListWidgetItem()
 
+        self.races = self.session.query(Race)
+        self.racesSpecs = self.session.query(RaceSpec)
+        self.specs = self.session.query(Spec)
+
         self.push_addRace.clicked.connect(self.openCreateRaceWindow)
         self.push_addSpec.clicked.connect(self.openCreateSpecWindow)
         self.push_addRaceSpec.clicked.connect(self.openCreateRaceSpecWindow)
-        self.push_update.clicked.connect(self.update_table)
+        self.push_update.clicked.connect(self.update_all)
         self.push_goBack.clicked.connect(self.exitFromWindow)
+        self.comboBox_race.currentTextChanged.connect(self.update_raceSpec)
 
-        self.update_table()
+    def update_all(self):
+        self.comboBox_race.clear()
+        for race in self.races:
+            self.comboBox_race.addItem(str(race.title))
+        self.update_tables()
+        self.update_raceSpec()
 
-    def update_table(self):
-        if self.item.text() != "creator" and self.item.text() != "developer":
-            self.push_addRace.hide()
-            self.push_addSpec.hide()
-            self.push_addRaceSpec.hide()
-        if self.item.text() == "creator" or self.item.text() == "developer":
-            self.push_addRace.show()
-            self.push_addSpec.show()
-            self.push_addRaceSpec.show()
+    def update_comboBox(self):
+        self.comboBox_race.clear()
+        for race in self.races:
+            self.comboBox_race.addItem(race.title)
 
+    def update_raceSpec(self):
+        self.tableWidget_RacesSpecs.setRowCount(0)
+        for raceSpec in self.racesSpecs:
+            for race in self.races:
+                if race.title == self.comboBox_race.currentText():
+                    if raceSpec.race_id == race.id:
+                        for spec in self.specs:
+                            if raceSpec.spec_id == spec.id:
+                                row_position = self.tableWidget_RacesSpecs.rowCount()
+                                self.tableWidget_RacesSpecs.insertRow(row_position)
+                                self.tableWidget_RacesSpecs.setItem(row_position, 0,
+                                                                    QTableWidgetItem(str(spec.id)))
+                                self.tableWidget_RacesSpecs.setItem(row_position, 1,
+                                                                    QTableWidgetItem(str(spec.title)))
+
+    def update_tables(self):
         races = self.session.query(Race).order_by(Race.id).all()
         specs = self.session.query(Spec).order_by(Spec.id).all()
-        racesSpecs = self.session.query(RaceSpec).order_by(RaceSpec.race_id).all()
 
         self.tableWidget_Races.setRowCount(0)
         for race in races:
@@ -55,19 +75,15 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
             self.tableWidget_Specs.setItem(row_position, 0, QTableWidgetItem(str(spec.id)))
             self.tableWidget_Specs.setItem(row_position, 1, QTableWidgetItem(str(spec.title)))
 
-        self.tableWidget_RacesSpecs.setRowCount(0)
-        for raceSpec in racesSpecs:
-            for race in races:
-                if raceSpec.race_id == race.id:
-                    race_inRacesSpecs = race.title
-            for spec in specs:
-                if raceSpec.spec_id == spec.id:
-                    spec_inRacesSpecs = spec.title
-
-            row_position = self.tableWidget_RacesSpecs.rowCount()
-            self.tableWidget_RacesSpecs.insertRow(row_position)
-            self.tableWidget_RacesSpecs.setItem(row_position, 0, QTableWidgetItem(str(race_inRacesSpecs)))
-            self.tableWidget_RacesSpecs.setItem(row_position, 1, QTableWidgetItem(str(spec_inRacesSpecs)))
+    def pushVision(self):
+        if self.item.text() != "creator" and self.item.text() != "developer":
+            self.push_addRace.hide()
+            self.push_addSpec.hide()
+            self.push_addRaceSpec.hide()
+        if self.item.text() == "creator" or self.item.text() == "developer":
+            self.push_addRace.show()
+            self.push_addSpec.show()
+            self.push_addRaceSpec.show()
 
     def openCreateRaceWindow(self):
         self.create_window = CreateRace(self)
@@ -85,6 +101,6 @@ class RacesSpecs(QMainWindow, Ui_RacesSpecsWindow):
         self.show()
 
     def exitFromWindow(self):
-        self.update_table()
+        self.update_all()
         self.close()
 

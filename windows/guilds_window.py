@@ -24,8 +24,6 @@ class Guilds(QMainWindow, Ui_GuildsWindow):
 
         self.passTo_createGuildWindow = CreateGuild()
 
-        self.update_table()
-
     def update_table(self):
         guilds = self.session.query(Guild).order_by(Guild.id).all()
         characters = self.session.query(Character).order_by(Character.id).all()
@@ -51,4 +49,5 @@ class Guilds(QMainWindow, Ui_GuildsWindow):
         self.close()
 
     def showWindow(self):
+        self.update_table()
         self.show()

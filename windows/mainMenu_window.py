@@ -36,6 +36,7 @@ class MainMenu(QMainWindow, Ui_MainMenuWindow):
 
     def openPlayers(self):
         self.passTo_usersWindow.item.setText(self.item.text())
+        self.passTo_usersWindow.pushVision()
         self.passTo_usersWindow.showWindow()
 
     def openGuilds(self):
@@ -44,15 +45,19 @@ class MainMenu(QMainWindow, Ui_MainMenuWindow):
 
     def openRacesSpecs(self):
         self.passTo_rasesSpecsWindow.item.setText(self.item.text())
+        self.passTo_rasesSpecsWindow.pushVision()
+        self.passTo_rasesSpecsWindow.update_all()
         self.passTo_rasesSpecsWindow.showWindow()
 
     def exitFromAccount(self):
-        dialog_warning = Dialog("Вы уверены что хотите выйти?")
+        dialog_warning = Dialog("Вы уверены, что хотите выйти?")
         ret_value = dialog_warning.exec_()
         if ret_value == QDialog.Accepted:
             self.custom_close()
 
     def showWindow(self):
+        print(self.item.text())
+        self.label_username.setText(self.item.text())
         self.show()
 
     def custom_close(self):

@@ -43,7 +43,7 @@ class ChangeCharacter(QWidget, Ui_ChangeCharacterWidget):
     def levelUp(self):
         if int(str(self.targetChar.level)) < 100:
             chanceSuccess = 100 - self.targetChar.level / 100 * 80
-            chanceFail = self.targetChar.level / 100 * 20
+            chanceFail = 100 - self.targetChar.level / 100 * 20
             currentChance = random.randint(1, 100)
             if currentChance <= chanceSuccess:
                 self.targetChar.level += 1
@@ -52,13 +52,16 @@ class ChangeCharacter(QWidget, Ui_ChangeCharacterWidget):
                 dialog_warning = Dialog("Вам повезло! Уровень поднят!")
                 dialog_warning.exec_()
             elif chanceSuccess < currentChance and currentChance <= chanceFail:
-                dialog_warning = Dialog("Опа! Уровень не изменён(")
+                dialog_warning = Dialog("Уровень не изменён.")
                 dialog_warning.exec_()
             else:
-                dialog_warning = Dialog("Ого! Непавезо... Уровень понижен(((")
+                self.targetChar.level -= 1
+                self.session.commit()
+                self.updateRecords()
+                dialog_warning = Dialog("Неповезо... Уровень понижен.")
                 dialog_warning.exec_()
         else:
-            dialog_warning = Dialog("Ничего себе! Вы дослигли максимального уровня!")
+            dialog_warning = Dialog("Вы дослигли максимального уровня!")
             dialog_warning.exec_()
 
     def changeGuild(self):

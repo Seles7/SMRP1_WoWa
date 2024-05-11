@@ -29,8 +29,6 @@ class Characters(QMainWindow, Ui_CharactersWindow):
         self.passTo_createCharacterWidget = CreateCharacter()
         self.passTo_changeCharacterWidget = ChangeCharacter()
 
-        self.update_table()
-
     def update_table(self):
         characters = self.session.query(Character).order_by(Character.id).all()
         users = self.session.query(User).order_by(User.id).all()
@@ -92,4 +90,5 @@ class Characters(QMainWindow, Ui_CharactersWindow):
         self.close()
 
     def showWindow(self):
+        self.update_table()
         self.show()

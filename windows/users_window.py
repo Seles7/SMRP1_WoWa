@@ -23,15 +23,14 @@ class Users(QMainWindow, Ui_UsersWindow):
         self.push_BAN.clicked.connect(self.BAN)
         self.tableWidget_Users.cellClicked.connect(self.cellClicked)
 
-        self.update_table()
-
-    def update_table(self):
+    def pushVision(self):
         print(self.item.text())
         if self.item.text() != "creator" and self.item.text() != "admin":
             self.push_BAN.hide()
         if self.item.text() == "creator" or self.item.text() == "admin":
             self.push_BAN.show()
 
+    def update_table(self):
         users = self.session.query(User).order_by(User.id).all()
         self.tableWidget_Users.setRowCount(0)
         for user in users:
@@ -75,6 +74,7 @@ class Users(QMainWindow, Ui_UsersWindow):
         self.current_row = row
 
     def showWindow(self):
+        self.update_table()
         self.show()
 
     def goBack(self):

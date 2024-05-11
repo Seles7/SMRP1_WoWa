@@ -21,16 +21,20 @@ class CreateSpec(QWidget, Ui_CreateSpecWidget):
 
     def acceptCreateRace(self):
         spec_input = self.lineEdit_Name.text()
-        key = 1
+        specs = self.session.query(Spec)
+        key = False
 
-        for spec in self.session:
+        for spec in specs:
             if str(spec_input) == str(spec.title):
-                key = 0
+                key = True
                 self.open_specAlreadyRegist()
-        if key == 1:
+        print(key)
+        if not key:
             new_spec = Spec(title=spec_input)
             self.session.add(new_spec)
             self.session.commit()
+            dialog_warning = Dialog("Класс успешно создан.")
+            dialog_warning.exec_()
             self.custom_close()
 
     def open_specAlreadyRegist(self):
