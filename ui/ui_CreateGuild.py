@@ -66,15 +66,6 @@ class Ui_CreateGuildWidget(object):
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
         self.formLayout.setContentsMargins(0, 0, 0, 0)
         self.formLayout.setObjectName("formLayout")
-        self.push_creator = QtWidgets.QPushButton(self.formLayoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("Monotype Corsiva")
-        font.setPointSize(17)
-        self.push_creator.setFont(font)
-        self.push_creator.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"
-"color: rgb(255, 253, 189)")
-        self.push_creator.setObjectName("push_creator")
-        self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.push_creator)
         self.comboBox_character = QtWidgets.QComboBox(self.formLayoutWidget)
         font = QtGui.QFont()
         font.setPointSize(18)
@@ -96,6 +87,15 @@ class Ui_CreateGuildWidget(object):
         self.LineEdit_TitleGuild.setFont(font)
         self.LineEdit_TitleGuild.setObjectName("LineEdit_TitleGuild")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.LineEdit_TitleGuild)
+        self.TitleCharacter = QtWidgets.QLabel(self.formLayoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("Monotype Corsiva")
+        font.setPointSize(18)
+        self.TitleCharacter.setFont(font)
+        self.TitleCharacter.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"
+"color: rgb(255, 253, 189)")
+        self.TitleCharacter.setObjectName("TitleCharacter")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.TitleCharacter)
         self.img_background.raise_()
         self.img_title.raise_()
         self.push_CreateGuild.raise_()
@@ -112,8 +112,8 @@ class Ui_CreateGuildWidget(object):
         self.push_CreateGuild.setText(_translate("CreateGuildWidget", "Основать Гильдию"))
         self.push_GoBack.setText(_translate("CreateGuildWidget", "Отмена"))
         self.title.setText(_translate("CreateGuildWidget", "Создание Гильдии"))
-        self.push_creator.setText(_translate("CreateGuildWidget", "Основатель"))
-        self.TitleGuild.setText(_translate("CreateGuildWidget", "Название     "))
+        self.TitleGuild.setText(_translate("CreateGuildWidget", "Название    "))
+        self.TitleCharacter.setText(_translate("CreateGuildWidget", "Основатель"))
 import images.resource1_rc
 
 

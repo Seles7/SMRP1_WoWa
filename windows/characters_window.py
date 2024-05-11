@@ -19,6 +19,7 @@ class Characters(QMainWindow, Ui_CharactersWindow):
         self.push_goBackP.clicked.connect(self.goBack)
         self.push_CreateCharacter.clicked.connect(self.open_createCharacterWindow)
         self.push_update.clicked.connect(self.update_table)
+        self.checkBox.clicked.connect(self.update_table)
 
         self.passTo_createCharacterWidget = CreateCharacter()
 
@@ -32,8 +33,18 @@ class Characters(QMainWindow, Ui_CharactersWindow):
         specs = self.session.query(Spec).order_by(Spec.id).all()
         racesSpecs = self.session.query(RaceSpec).order_by(RaceSpec.id).all()
 
+        isCheck = self.checkBox.isChecked()
+
         self.table_Characters.setRowCount(0)
         for character in characters:
+            for user in users:
+                if user.id == character.id_user:
+                    user_ofChar = user.username
+
+            if isCheck:
+                if user_ofChar != self.item.text():
+                    continue
+
             for raceSpec in racesSpecs:
                 if raceSpec.id == character.id_racespec:
                     for race in races:
@@ -45,9 +56,6 @@ class Characters(QMainWindow, Ui_CharactersWindow):
             for guild in guilds:
                 if guild.id == character.id_guild:
                     guild_ofChar = guild.title
-            for user in users:
-                if user.id == character.id_user:
-                    user_ofChar = user.username
 
             row_position = self.table_Characters.rowCount()
             self.table_Characters.insertRow(row_position)

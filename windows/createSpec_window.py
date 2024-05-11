@@ -34,7 +34,7 @@ class CreateSpec(QWidget, Ui_CreateSpecWidget):
             self.custom_close()
 
     def open_specAlreadyRegist(self):
-        dialog_warning = Dialog("Такая профессия уже существует.")
+        dialog_warning = Dialog("Такой класс уже существует.")
         dialog_warning.exec_()
         self.custom_close()
 

@@ -18,7 +18,6 @@ class CreateGuild(QWidget, Ui_CreateGuildWidget):
 
         self.push_CreateGuild.clicked.connect(self.createGuild)
         self.push_GoBack.clicked.connect(self.goBack)
-        self.push_creator.clicked.connect(self.updateComboBox)
 
         self.comboBox_character.clear()
 
