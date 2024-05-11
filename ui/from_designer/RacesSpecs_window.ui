@@ -61,7 +61,7 @@
      <set>QAbstractItemView::NoEditTriggers</set>
     </property>
     <attribute name="horizontalHeaderStretchLastSection">
-     <bool>false</bool>
+     <bool>true</bool>
     </attribute>
     <column>
      <property name="text">
@@ -128,7 +128,7 @@
      <set>QAbstractItemView::NoEditTriggers</set>
     </property>
     <attribute name="horizontalHeaderStretchLastSection">
-     <bool>false</bool>
+     <bool>true</bool>
     </attribute>
     <column>
      <property name="text">

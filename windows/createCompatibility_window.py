@@ -1,7 +1,7 @@
 from typing import Iterable, Callable
 
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QListWidgetItem, QDialog
+from PyQt5.QtWidgets import QWidget, QComboBox, QDialog
 
 from ui import Ui_CompatibilityWidget
 from .dialog_window import Dialog
@@ -16,12 +16,25 @@ class CreateCompatibility(QWidget, Ui_CompatibilityWidget):
         self.callbacks = callbacks
         self.setupUi(self)
         self.session = get_session()
+
         self.push_AceptCreate.clicked.connect(self.acceptCreateCompatibility)
         self.push_GoBack.clicked.connect(self.custom_close)
 
+        self.comboBox_race.clear()
+        self.comboBox_spec.clear()
+        self.updateComboBoxes()
+
+    def updateComboBoxes(self):
+        races = self.session.query(Race)
+        specs = self.session.query(Spec)
+        for race in races:
+            self.comboBox_race.addItem(race.title)
+        for spec in specs:
+            self.comboBox_spec.addItem(spec.title)
+
     def acceptCreateCompatibility(self):
-        race_input = self.lineEdit_Race.text()
-        spec_input = self.lineEdit_Spec.text()
+        race_input = str(self.comboBox_race.currentText())
+        spec_input = str(self.comboBox_spec.currentText())
 
         races = self.session.query(Race)
         specs = self.session.query(Spec)
@@ -33,7 +46,6 @@ class CreateCompatibility(QWidget, Ui_CompatibilityWidget):
             for race in races:
                 if race_input == race.title:
                     i_r = race.id
-                    print(i_r)
                     break
             if i_r == -1:
                 isFound = False
@@ -46,7 +58,7 @@ class CreateCompatibility(QWidget, Ui_CompatibilityWidget):
                 isFound = False
         if isFound:
             for raceSpec in racesSpecs:
-                if i_s == raceSpec.race_id and i_r == raceSpec.spec_id:
+                if i_r == raceSpec.race_id and i_s == raceSpec.spec_id:
                     isFound = False
                     break
         if isFound:

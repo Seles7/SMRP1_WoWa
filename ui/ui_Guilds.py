@@ -37,7 +37,7 @@ class Ui_GuildsWindow(object):
         self.Title.setStyleSheet("")
         self.Title.setObjectName("Title")
         self.push_goBack = QtWidgets.QPushButton(self.centralwidget)
-        self.push_goBack.setGeometry(QtCore.QRect(500, 440, 171, 41))
+        self.push_goBack.setGeometry(QtCore.QRect(530, 440, 141, 41))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
         font.setPointSize(18)
@@ -76,12 +76,22 @@ class Ui_GuildsWindow(object):
         self.img_underGuilds.setPixmap(QtGui.QPixmap(":/pins1/pergament2.png"))
         self.img_underGuilds.setScaledContents(True)
         self.img_underGuilds.setObjectName("img_underGuilds")
+        self.push_update = QtWidgets.QPushButton(self.centralwidget)
+        self.push_update.setGeometry(QtCore.QRect(380, 440, 141, 41))
+        font = QtGui.QFont()
+        font.setFamily("Monotype Corsiva")
+        font.setPointSize(18)
+        self.push_update.setFont(font)
+        self.push_update.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"
+"color: rgb(255, 253, 189)")
+        self.push_update.setObjectName("push_update")
         self.img_background.raise_()
         self.img_underGuilds.raise_()
         self.push_createGuild.raise_()
         self.Title.raise_()
         self.push_goBack.raise_()
         self.tableWidget_Guilds.raise_()
+        self.push_update.raise_()
         GuildsWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(GuildsWindow)
@@ -99,6 +109,7 @@ class Ui_GuildsWindow(object):
         item.setText(_translate("GuildsWindow", "Название"))
         item = self.tableWidget_Guilds.horizontalHeaderItem(2)
         item.setText(_translate("GuildsWindow", "Число участников"))
+        self.push_update.setText(_translate("GuildsWindow", "Обновить"))
 import images.resource1_rc
 
 

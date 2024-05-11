@@ -121,7 +121,7 @@ color: rgb(255, 253, 189)</string>
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLineEdit" name="lineEdit_Spec">
+     <widget class="QComboBox" name="comboBox_spec">
       <property name="font">
        <font>
         <pointsize>18</pointsize>
@@ -130,7 +130,7 @@ color: rgb(255, 253, 189)</string>
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QLineEdit" name="lineEdit_Race">
+     <widget class="QComboBox" name="comboBox_race">
       <property name="font">
        <font>
         <pointsize>18</pointsize>
@@ -161,7 +161,7 @@ color: rgb(255, 253, 189)</string>
 </string>
    </property>
    <property name="text">
-    <string>Совместимость</string>
+    <string>Создание связи</string>
    </property>
   </widget>
   <widget class="QLabel" name="img_underCompat">
@@ -220,57 +220,12 @@ color: rgb(255, 253, 189)</string>
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="labe_warning">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>170</y>
-     <width>241</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(147, 0, 0);</string>
-   </property>
-   <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Писать Расы и Классы идентично табличным!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="img_underWarning">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>170</y>
-     <width>341</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-image: url(:/newPrefix/Downloads/kisspng-paper-scroll-parchment-clip-art-landscape-apge-with-pen-5b0bcdc6e5bf67.4688394015275002309411.png);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="../../images/resource1.qrc">:/pins1/pergament2.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
   <zorder>img_background</zorder>
-  <zorder>img_underWarning</zorder>
   <zorder>img_underCompat</zorder>
   <zorder>push_AceptCreate</zorder>
   <zorder>push_GoBack</zorder>
   <zorder>formLayoutWidget</zorder>
   <zorder>label_Compatibility</zorder>
-  <zorder>labe_warning</zorder>
  </widget>
  <resources>
   <include location="../../images/resource1.qrc"/>

@@ -28,7 +28,7 @@ class Ui_UsersWindow(object):
         self.Title.setStyleSheet("")
         self.Title.setObjectName("Title")
         self.push_goBack = QtWidgets.QPushButton(self.centralwidget)
-        self.push_goBack.setGeometry(QtCore.QRect(500, 440, 171, 41))
+        self.push_goBack.setGeometry(QtCore.QRect(530, 440, 141, 41))
         font = QtGui.QFont()
         font.setFamily("Monotype Corsiva")
         font.setPointSize(18)
@@ -85,12 +85,22 @@ class Ui_UsersWindow(object):
         self.push_BAN.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"
 "color: rgb(255, 253, 189)")
         self.push_BAN.setObjectName("push_BAN")
+        self.push_update = QtWidgets.QPushButton(self.centralwidget)
+        self.push_update.setGeometry(QtCore.QRect(380, 440, 141, 41))
+        font = QtGui.QFont()
+        font.setFamily("Monotype Corsiva")
+        font.setPointSize(18)
+        self.push_update.setFont(font)
+        self.push_update.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));\n"
+"color: rgb(255, 253, 189)")
+        self.push_update.setObjectName("push_update")
         self.img_background.raise_()
         self.img_underUsers.raise_()
         self.Title.raise_()
         self.push_goBack.raise_()
         self.tableWidget_Users.raise_()
         self.push_BAN.raise_()
+        self.push_update.raise_()
         UsersWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(UsersWindow)
@@ -107,6 +117,7 @@ class Ui_UsersWindow(object):
         item = self.tableWidget_Users.horizontalHeaderItem(1)
         item.setText(_translate("UsersWindow", "Никнейм"))
         self.push_BAN.setText(_translate("UsersWindow", "Забанить"))
+        self.push_update.setText(_translate("UsersWindow", "Обновить"))
 import images.resource1_rc
 
 

@@ -74,9 +74,9 @@ color: rgb(255, 253, 189)</string>
    <widget class="QPushButton" name="push_goBack">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>530</x>
       <y>440</y>
-      <width>171</width>
+      <width>141</width>
       <height>41</height>
      </rect>
     </property>
@@ -187,12 +187,36 @@ color: rgb(255, 253, 189)</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="push_update">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>440</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Monotype Corsiva</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0.0340909, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(124, 124, 124, 255));
+color: rgb(255, 253, 189)</string>
+    </property>
+    <property name="text">
+     <string>Обновить</string>
+    </property>
+   </widget>
    <zorder>img_background</zorder>
    <zorder>img_underGuilds</zorder>
    <zorder>push_createGuild</zorder>
    <zorder>Title</zorder>
    <zorder>push_goBack</zorder>
    <zorder>tableWidget_Guilds</zorder>
+   <zorder>push_update</zorder>
   </widget>
  </widget>
  <resources>

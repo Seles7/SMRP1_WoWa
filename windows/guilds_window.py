@@ -1,4 +1,5 @@
 from typing import Iterable, Callable
+import time
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QWidget, QMainWindow, QTableWidgetItem, QListWidgetItem, QDialog
@@ -41,6 +42,7 @@ class Guilds(QMainWindow, Ui_GuildsWindow):
 
     def open_createGuildWindow(self):
         self.passTo_createGuildWindow.item.setText(self.item.text())
+        time.sleep(1)
         self.passTo_createGuildWindow.showWindow()
 
     def goBack(self):
