@@ -35,6 +35,8 @@ class Registration(QWidget, Ui_RegistrationWidget):
         if isFound == False:
             self.session.add(new_user)
             self.session.commit()
+            dialog_warning = Dialog("Аккаунт создан!")
+            dialog_warning.exec_()
             self.custom_close()
 
     def open_userAlreadyRegist(self):

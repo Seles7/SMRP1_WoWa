@@ -289,7 +289,7 @@ color: rgb(255, 253, 189)
      <enum>Qt::LeftToRight</enum>
     </property>
     <property name="text">
-     <string/>
+     <string>s</string>
     </property>
    </widget>
    <zorder>img_background</zorder>

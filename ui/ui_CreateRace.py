@@ -52,6 +52,7 @@ class Ui_CreateRaceWidget(object):
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_Name)
         self.lineEdit_Name = QtWidgets.QLineEdit(self.formLayoutWidget)
         font = QtGui.QFont()
+        font.setFamily("Monotype Corsiva")
         font.setPointSize(18)
         self.lineEdit_Name.setFont(font)
         self.lineEdit_Name.setObjectName("lineEdit_Name")

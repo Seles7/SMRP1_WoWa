@@ -65,6 +65,8 @@ class CreateCompatibility(QWidget, Ui_CompatibilityWidget):
             new_compatibility = RaceSpec(race_id=i_r, spec_id=i_s)
             self.session.add(new_compatibility)
             self.session.commit()
+            dialog_warning = Dialog("Связь создана!")
+            dialog_warning.exec_()
             self.custom_close()
 
         if not isFound:

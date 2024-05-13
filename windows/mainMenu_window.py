@@ -41,6 +41,7 @@ class MainMenu(QMainWindow, Ui_MainMenuWindow):
 
     def openGuilds(self):
         self.passTo_guildsWindow.item.setText(self.item.text())
+        self.passTo_guildsWindow.pushVision()
         self.passTo_guildsWindow.showWindow()
 
     def openRacesSpecs(self):

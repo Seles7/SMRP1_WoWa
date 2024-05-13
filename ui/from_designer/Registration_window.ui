@@ -96,6 +96,7 @@ color: rgb(255, 253, 189)
      <widget class="QLineEdit" name="lineEdit_Name">
       <property name="font">
        <font>
+        <family>Monotype Corsiva</family>
         <pointsize>18</pointsize>
        </font>
       </property>
@@ -105,6 +106,7 @@ color: rgb(255, 253, 189)
      <widget class="QLineEdit" name="lineEdit_Password">
       <property name="font">
        <font>
+        <family>Monotype Corsiva</family>
         <pointsize>18</pointsize>
        </font>
       </property>

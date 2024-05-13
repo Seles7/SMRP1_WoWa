@@ -16,6 +16,7 @@ class CreateGuild(QWidget, Ui_CreateGuildWidget):
         self.setupUi(self)
         self.session = get_session()
         self.item = QListWidgetItem()
+        self.idNewGuild = -1
 
         self.push_CreateGuild.clicked.connect(self.createGuild)
         self.push_GoBack.clicked.connect(self.goBack)
@@ -37,7 +38,6 @@ class CreateGuild(QWidget, Ui_CreateGuildWidget):
         titleIsFind = False
         nickname_input = self.comboBox_character.currentText()
         title_input = self.LineEdit_TitleGuild.text()
-        idGuild = -1
 
         characters = self.session.query(Character)
         guilds = self.session.query(Guild)
@@ -53,13 +53,16 @@ class CreateGuild(QWidget, Ui_CreateGuildWidget):
             self.session.commit()
 
             for character in characters:
-                if character.nickname == nickname_input:
+                if str(character.nickname) == str(nickname_input):
                     for guild in guilds:
-                        if guild.id == idGuild:
+                        if str(title_input) == str(guild.title):
                             exist_character: Character = self.session.query(Character).get(character.id)
-                            exist_character.id_guild = idGuild
+                            exist_character.id_guild = int(guild.id)
+                            print(guild.id)
+                            print(int(character.id_guild))
                             self.session.commit()
-                            dialog_warning = Dialog("Гильдия создана!.")
+
+                            dialog_warning = Dialog("Гильдия создана!")
                             dialog_warning.exec()
 
             self.custom_close()
